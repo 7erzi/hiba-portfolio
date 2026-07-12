@@ -29,7 +29,7 @@ const state = { projects: [], activeFilters: new Set() };
 
 async function loadProjects() {
   try {
-    const res = await fetch('/api/projects');
+    const res = await fetch('data/projects.json');
     state.projects = await res.json();
   } catch (err) {
     console.error('Impossible de charger les projets :', err);
