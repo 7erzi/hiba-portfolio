@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url(img/ck22.jpg);
+    background-position: center;
+    background-size: cover;
+}
+section{
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255 , 0,2);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    width: 420px;
+    border-radius: 20px;
+}
+section h1{
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.input-box{
+   width: 100%;
+   padding: 7px;
+   border-radius: 15px;
+ 
+}
+.input-box input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255 , 0,2);
+    counter-reset: #fff;
+    padding-right: 40px;
+    position: relative;
+    top: 2px;
+
+}
+.input-box input::placeholder{
+    color: #fff;
+ }   
+ .input-box i{
+    position: relative;
+    transform:translatey(-50%);
+    right: -90%;
+    bottom: 28px;
+    color: #ffffff;
+ }
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  margin: 10px 0;
+  position: relative;
+  top: -15px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+}
+.remember-forgot a , .registre-link a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: bold;
+}
+.remember-forgot a:hover ,  .registre-link a{
+    text-decoration: underline;
+}
+
+
+ .login-btn{
+    width:100% ;
+    padding: 15px;
+    border-radius:25px;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transform: 0.5s;
+ }
+  .login-btn:hover{
+    background-color: transparent;
+     border: 2px solid rgba(255, 255, 255 , 0,2);
+     color: #fff;
+
+     }
+     .registre-link{
+        text-align: center;
+        margin-top: 25px;
+        color:#fff ;
+        font-size:16px ;
+     }
+     .inscrire{
+        display: none;
+     }
+ 
+  
+
+    </style>
+   
+<body>
+    
+    <div class="Inscription">
+    <div class="se connecter">
+    <section>
+
+    <h1>Connexion</h1>
+    <div class="input-box">
+        <input type="text" placeholder="Nom utilisateur" style="font-size: 18px; color: #fff;" >
+        <i class="fa-solid fa-user"></i>
+            <div class="input-box">
+        <input type="password" placeholder="Mot de passe" style="font-size: 18px; color:#fff ;">
+        <i class="fa-solid fa-lock" style="position: relative; bottom: 25px;"></i>
+    </div>
+<div class="remember-forgot">
+  <div class="remember-me">
+    <div>
+        <input type="checkbox" id="remember">
+    </div>
+    <div>
+        <p >Se souvenir de moi</p>
+    </div>
+    
+  </div>
+  <a href="#">Mot de passe oublié ?</a>
+</div>
+    <a href="nav.html"><button class="login-btn" id="login-btn">Se connecter</button></a>
+    <div class="registre-link">
+        <p>Pas de compte ? <a href="inscription.html" id="inscription link" >Inscription</a></p>
+    </div>
+   
+</section>
+</div>
+<script src="js/script.js"></script>
+</div>
+</body>
+</body>
+</html>

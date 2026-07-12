@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégories</title>
+    <link rel="stylesheet" href="css/categorie.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+      <div class="navbar">
+    <div class="menu">
+        <img src="img/logo.png" alt="logo">
+         <button class="burger" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="nav.html">Acceuil</a></li> 
+            <li><a href="a propos de nous .html">A propos de nous</a></li>
+            
+            <li class="has-sous-nav">
+                <a href="catégorie.html">Catégories</a>
+               <ul class="sous-nav">
+                <li><a href="chebakia.html">Chebakia</a></li>
+                <li><a href="briwat.html">Briwat</a></li>
+                <li><a href="sigar.html">Sigar</a></li>
+                <li><a href="selou.html">Selou</a></li>
+                <li><a href="packs.html">Pack</a></li>
+             </ul>
+            </li>
+            <li><a href="produit.html">Nos Produits</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            
+        </ul>
+    </div> 
+    <a class="signup" href="inscription.html">S'inscrire</a>
+</div>
+   <header>
+    <h1>Nos Catégories</h1>
+    <p>Découvrez nos catégories de nos produits chez chebakia marocaine</p>
+  </header>
+
+  <main class="categories">
+    <div class="category-card">
+      <a href="chebakia.html"><img src="img/ck_cg-removebg-preview.png" alt="Chebakia"></a>
+      <h2>Chebakia</h2>
+    </div>
+    <div class="category-card">
+      <a href="briwat.html"><img src="img/briwa2-removebg-preview.png" alt="Briwat"></a>
+      <h2>Briwat</h2>
+    </div>
+    <div class="category-card">
+      <a href="sigar.html"><img src="img/sigarcg2-removebg-preview.png" alt="Selou"></a>
+      <h2>Sigar</h2>
+    </div>
+     <div class="category-card">
+      <a href="selou.html"><img src="img/Sellou_Marocain_-_Culinaire_Amoula_cg-removebg-preview.png" alt="Selou"></a>
+      <h2>Selou</h2>
+    </div>
+    <div class="category-card">
+      <a href="packs.html"><img src="img/pack2-removebg-preview.png" alt="Packs"></a>
+      <h2>Packs</h2>
+    </div>
+    <!-- Ajoute d'autres catégories si tu veux -->
+  </main>
+  <br>
+  <br>
+  <br>
+  <br>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+        
+      <h3>Chebakia Healthy</h3>
+      <p>
+        Notre passion pour la pâtisserie marocaine artisanale nous pousse chaque jour à vous offrir les meilleures chebakia, préparées avec soin et des ingrédients 100% naturels.
+      </p>
+     
+    </div>
+
+    <div class="footer-section">
+      <h4>Office</h4>
+      <p>ITPL Road<br>
+        Rue Allal Ben Abdellah<br>
+        Casablanca, Maroc<br>
+        ChebakiaMarocaine@email.com<br>
+        +212 6 74 13 45 56
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Liens utiles</h4>
+         <ul>
+        <li><a href="payement.html">Payement & Taxs </a></li>
+        <li><a href="utilisation.html">Condition d'utilisation</a></li>
+        <li><a href="livraison.html">Condition de livraison</a></li>
+        <li><a href="retour.html">Condition de retour</a></li>
+      </ul>
+      <div class="icons">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-square-youtube"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <label for="email">Newsletter</label><br>
+    <input type="email" id="email" placeholder="Entrez votre email">
+    <button>Envoyer</button>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Chebakia Healthy. Tous droits réservés.
+  </div>
+</footer>
+   <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+    }
+
+      const burger = document.querySelector('.burger');
+  const menuUL = document.querySelector('.menu > ul');
+  const categories = document.querySelector('.has-sous-nav');
+
+  burger.addEventListener('click', () => {
+    menuUL.classList.toggle('active');
+  });
+
+  // Toggle dropdown submenu on mobile
+  categories.querySelector('a').addEventListener('click', e => {
+    if(window.innerWidth <= 992) {
+      e.preventDefault();
+      categories.classList.toggle('active');
+    }
+  });
+ </script>
+</body>
+</html>

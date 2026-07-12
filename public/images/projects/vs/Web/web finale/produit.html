@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/produit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+         <div class="navbar">
+    <div class="menu">
+        <img src="img/logo.png" alt="logo">
+         <button class="burger" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="nav.html">Acceuil</a></li>
+             <li><a href="a propos de nous .html">A propos de nous</a></li>
+           
+            <li class="has-sous-nav">
+                <a href="catégorie.html">Catégories</a>
+             <ul class="sous-nav">
+                <li><a href="chebakia.html">Chebakia</a></li>
+                <li><a href="briwat.html">Briwat</a></li>
+                <li><a href="sigar.html">Sigar</a></li>
+                <li><a href="selou.html">Selou</a></li>
+                <li><a href="packs.html">Pack</a></li>
+             </ul>
+            </li> 
+            <li><a href="produit.html">Nos Produits</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            
+        </ul>
+    </div> 
+    <a class="signup" href="inscription.html">S'inscrire</a>
+</div>
+    <div class="container">
+        <header>
+            <h1>Mon panier</h1>
+            <div class="shopping">
+          
+       <div id="cart-icon" title="Voir mon panier">
+  <i class="fas fa-shopping-basket" style="text-decoration: none;"></i> <span id="quantity">0</span>
+</div>
+
+
+               
+            </div>
+        </header>
+        <div class="list" id="product-list">
+        </div>
+        <div class="card">
+            <h1>Card</h1>
+            <ul id="listCard"></ul>
+            <div class="checkOut">
+             <div id="total">0</div>
+             <div class="closeShopping">Close</div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="js/panier.js"></script>
+   <script src="js/produit.js"></script>
+</body>
+</html>

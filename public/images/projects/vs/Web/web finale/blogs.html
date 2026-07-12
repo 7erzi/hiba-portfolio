@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs</title>
+    <link rel="stylesheet" href="css/blog.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <div class="navbar">
+    <div class="menu">
+        <img src="img/logo.png" alt="logo">
+          <button class="burger" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="nav.html">Acceuil</a></li> 
+             <li><a href="a propos de nous .html">A propos de nous</a></li>
+          
+            <li class="has-sous-nav">
+                <a href="catégorie.html">Catégories</a>
+              <ul class="sous-nav">
+                <li><a href="chebakia.html">Chebakia</a></li>
+                <li><a href="briwat.html">Briwat</a></li>
+                <li><a href="sigar.html">Sigar</a></li>
+                <li><a href="selou.html">Selou</a></li>
+                <li><a href="packs.html">Pack</a></li>
+             </ul>
+            </li> 
+             <li><a href="produit.html">Nos Produits</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+           
+        </ul>
+    </div> 
+    <a class="signup" href="inscription.html">S'inscrire</a>
+</div>
+
+
+  <header>
+    <h1>Notre Blog</h1>
+    <p>Découvrez nos recettes, astuces et histoires autour de la chebakia marocaine</p>
+  </header>
+
+  <div class="container">
+    <div class="post">
+      <img src="img/marocainch.jpeg" alt="Chebakia Traditionnelle">
+      <div class="post-content">
+        <h2>La recette authentique de la chebakia</h2>
+        <p>Apprenez à préparer la chebakia marocaine comme nos grands-mères : ingrédients, étapes et astuces pour réussir vos douceurs sucrées à la maison.</p>
+        <a href="https://www.marmiton.org/recettes/recette_chebakia_371912.aspx" class="read-more">Lire plus</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/ch2.jpeg" alt="Thé marocain et Chebakia">
+      <div class="post-content">
+        <h2>Chebakia Selou beldi et Briwat</h2>
+        <p>Découvrez pourquoi la chebakia se déguste si bien avec un bon verre de thé marocain et comment préparer cette pause gourmande à partager.</p>
+        <a href="https://www.thespruceeats.com/moroccan-sesame-cookies-with-honey-2394409" class="read-more">Lire plus</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/ch3.jpg" alt="Ramadan et Chebakia">
+      <div class="post-content">
+        <h2>Chebakia et traditions du Ramadan</h2>
+        <p>Explorez les origines de la chebakia et son rôle incontournable pendant le mois sacré de Ramadan au Maroc et dans le monde.</p>
+        <a href="https://fr.wikipedia.org/wiki/Chebbakia_(zlabia)" class="read-more">Lire plus</a>
+      </div>
+    </div>
+  </div>
+
+               <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+        
+      <h3>Chebakia Healthy</h3>
+      <p>
+        Notre passion pour la pâtisserie marocaine artisanale nous pousse chaque jour à vous offrir les meilleures chebakia, préparées avec soin et des ingrédients 100% naturels.
+      </p>
+     
+    </div>
+
+    <div class="footer-section">
+      <h4>Office</h4>
+      <p>ITPL Road<br>
+        Rue Allal Ben Abdellah<br>
+        Casablanca, Maroc<br>
+        ChebakiaMarocaine@email.com<br>
+        +212 6 74 13 45 56
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Liens utiles</h4>
+        <ul>
+        <li><a href="payement.html">Payement & Taxs </a></li>
+        <li><a href="utilisation.html">Condition d'utilisation</a></li>
+        <li><a href="livraison.html">Condition de livraison</a></li>
+        <li><a href="retour.html">Condition de retour</a></li>
+      </ul>
+      <div class="icons">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-square-youtube"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <label for="email">Newsletter</label><br>
+    <input type="email" id="email" placeholder="Entrez votre email">
+    <button>Envoyer</button>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Chebakia Healthy. Tous droits réservés.
+  </div>
+</footer>
+    <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+    }
+
+      const burger = document.querySelector('.burger');
+  const menuUL = document.querySelector('.menu > ul');
+  const categories = document.querySelector('.has-sous-nav');
+
+  burger.addEventListener('click', () => {
+    menuUL.classList.toggle('active');
+  });
+
+  // Toggle dropdown submenu on mobile
+  categories.querySelector('a').addEventListener('click', e => {
+    if(window.innerWidth <= 992) {
+      e.preventDefault();
+      categories.classList.toggle('active');
+    }
+  });
+ </script>
+</body>
+</html>

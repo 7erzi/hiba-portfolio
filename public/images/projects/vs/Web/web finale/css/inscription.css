@@ -1,0 +1,136 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(img/ck22.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        section {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+        }
+
+        section h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width:100%;
+            padding: 7px;
+            border-radius: 15px;
+            margin: 0;
+            gap: 10px;
+
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            counter-reset: #fff;
+            padding-right: 40px;
+        }
+        .input-box remember{
+           width: 30%;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+         .input-box i{
+            position: relative;
+            right: -90%;
+            bottom: 29px;
+            transform: translatey(-50%);
+            color: #fff;
+            top: -40px;
+ }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 17px;
+            color: white;
+            margin: 2px 50px ;
+            margin-left: -90px;
+            position: relative;
+            bottom: 20px;
+
+
+            
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+        label{
+            display:flex;
+        }
+
+        .remember-forgot a,
+        .registre-link a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+        .remember-forgot a:hover,
+        .registre-link a {
+            text-decoration: underline;
+        }
+
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            outline: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transform: 0.5s;
+        }
+
+        .login-btn:hover {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            color: #fff;
+
+        }
+
+        .registre-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .remember-me input{
+            width: 4%;
+        }

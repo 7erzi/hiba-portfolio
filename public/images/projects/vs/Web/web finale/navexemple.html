@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Site</title>
+  <link rel="stylesheet" href="css/navexemple.css" />
+</head>
+<body>
+  <!-- ANNONCE -->
+  <div class="top-annonce">
+    <div class="marquee"><p><strong>Promo:</strong> Livraison gratuite dès 500DH</p></div>
+  </div>
+
+  <!-- HEADER + NAVBAR -->
+  <header>
+    <div class="logo"><img src="img/logo.png" alt="Logo" /></div>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Produits</a></li>
+        <li class="has-sous-nav">
+          <a href="catégorie.html">Catégories</a>
+          <ul class="sous-nav">
+            <li><a href="chebakia.html">Chebakia</a></li>
+            <li><a href="briwat.html">Briwat</a></li>
+            <li><a href="sigar.html">Sigar</a></li>
+            <li><a href="selou.html">Selou</a></li>
+            <li><a href="packs.html">Pack</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="signup">S'inscrire</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="acceuil">
+    <div class="hero-text">
+      <h1>Bienvenue sur notre site</h1>
+      <p>Découvrez nos produits artisanaux de qualité.</p>
+      <button class="order-btn">Commander</button>
+    </div>
+  </section>
+
+  <!-- CATÉGORIES -->
+  <section class="content">
+    <div class="heading">
+      <h1>Nos <span>Catégories</span></h1>
+    </div>
+    <div class="Catégories-conatiner">
+      <div class="box box1"><img src="img/cat1.jpg" alt=""><h2>Catégorie 1</h2><span>Description</span></div>
+      <div class="box box2"><img src="img/cat2.jpg" alt=""><h2>Catégorie 2</h2><span>Description</span></div>
+      <div class="box box3"><img src="img/cat3.jpg" alt=""><h2>Catégorie 3</h2><span>Description</span></div>
+    </div>
+  </section>
+
+  <!-- PRODUITS -->
+  <section class="produits">
+    <div class="heading">
+      <h1>Nos <span>Produits</span></h1>
+    </div>
+    <div class="produits-conatiner">
+      <div class="box"><img src="img/prod1.jpg" alt=""><h2>Produit 1</h2><span>100 DH</span></div>
+      <div class="box"><img src="img/prod2.jpg" alt=""><h2>Produit 2</h2><span>150 DH</span></div>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section class="container-avis">
+    <h1>Nos <span>Avis</span></h1>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <p>"Super produit !"</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">Ahmed</div>
+        </div>
+        <div class="slide">
+          <p>"Livraison rapide !"</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">Salma</div>
+        </div>
+      </div>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h1>Nos <span>Avantages</span></h1>
+    <div class="featurall">
+      <div class="feature">
+        <i class="fa fa-truck"></i>
+        <h4>Livraison</h4>
+        <p>Partout au Maroc</p>
+      </div>
+      <div class="feature">
+        <i class="fa fa-leaf"></i>
+        <h4>Qualité</h4>
+        <p>Produits sains</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="img/logo.png" alt="Logo">
+        <p>Notre boutique en ligne artisanale.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Produits</a></li>
+        </ul>
+      </div>
+      <div class="footer-section newsletter">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Votre Email">
+        <button>S'abonner</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Mon Site. Tous droits réservés.
+    </div>
+  </footer>
+
+  <script src="js/navexemple.js"></script>
+</body>
+</html>

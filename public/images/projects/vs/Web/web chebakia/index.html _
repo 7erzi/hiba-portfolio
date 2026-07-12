@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chebakia shop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fa-bars"></label>
+    <a href="#" class="logo">
+    <img src="pics/logo new.jpg" alt="Bootstrap" class="rounded-circle" width="150" height="150">
+    </a>
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#products">products</a>
+        <a href="#review">review</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <div class="icons">
+    <img src="pics/icons/heart.svg"  href="#" class="fas fa-heart" width="15" height="15"></a>
+    <img src="pics/icons/cart.svg" href="#" class="cart" width="15" height="15"></a>
+    <img src="pics/icons/person-circle.svg" href="#" class="fas fa-user" width="15" height="15"></a>
+    </div>
+</header>
+<!--home section starts-->
+<section class="home" id="home">
+    <div class="content">
+         <h1>Healthy Chebakia</h1>
+         <span> natural & yummy</span>
+         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto corrupti obcaecati recusandae, non, eos eum maxime est quaerat dolor modi nisi, necessitatibus tempora rerum sunt impedit sequi beatae officiis animi.</p>
+         <a href="#" class="btn">shop now</a>
+    </div>
+</section>
+<!--home section ends-->
+
+<!--about section starts-->
+<section class="about" id="about">
+   <h2 class="heading"><span>about </span>  us</h2>
+     <div class="row">
+         <div class="gif">
+            <h2>Best chebakia sellers</h2>
+         </div>
+         <div class="content">
+            <br>
+            <h3>why choose us?</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum voluptatum amet consequatur voluptatem alias dolor, perferendis quae excepturi deleniti incidunt, necessitatibus optio eligendi hic officia id repellendus illum numquam maxime?</p>
+            <a href="#" class="btn">learn more</a>
+         </div>
+     </div>
+</section>
+<!--about section ends-->
+
+<!--icons section starts-->
+<section class="icons-conta">
+
+        <div class="icons delivery">
+             <img src="pics/icons/dilvery.svg" width="100" height="100" alt="delivery">
+             <div class="info">
+                <h4>free delivery</h4>
+                <span>on all orders</span>
+             </div>
+        </div>
+
+        <div class="icons">
+            <img src="pics/icons/coin.svg"width="100" height="100" alt="money">
+            <div class="info">
+               <h4>5 days returns</h4>
+               <span>moneyback garantee</span>
+            </div>
+       </div>
+
+       <div class="icons">
+        <img src="pics/icons/gift-fill.svg"width="100" height="100" alt="gift">
+        <div class="info">
+           <h4>offers & gifts</h4>
+           <span>on all orders</span>
+        </div>
+   </div>
+</section>
+<!--icons section ends-->
+
+<!--products section starts-->
+<section class="products" id="products">
+    <h1 class="heading">latest <span> products</span></h1>
+    <div class="box-container">
+        <div class="box">
+             <span class="discount">-10%</span>
+               <div class="image">
+                    <img src="pics/Moroccan sweets _ Chebakia.jpg">
+                      <div class="icons">
+                          <a href="#" class="fas fa-heart" ></a>
+                          <a href="#" class="cart"> add to cart</a>
+                        <a href="#" class="fas fa-share" ></a>
+                    </div>
+                </div>
+            <div class="content">
+                <h3>chebakia 1kg</h3>
+                <div class="price">120.00 DH <span>150.00 DH</span></div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-15%</span>
+              <div class="image">
+                   <img src="pics/téléchargement (4).jpg" >
+                     <div class="icons">
+                         <a href="#" class="fas fa-heart" ></a>
+                         <a href="#" class="cart">add to cart</a>
+                       <a href="#" class="fas fa-share" ></a>
+                   </div>
+               </div>
+           <div class="content">
+               <h3>El belgha, 1kg</h3>
+               <div class="price">90.00 DH <span>130.00 DH</span></div>
+           </div>
+       </div>
+       <br>
+       <br>
+       <div class="box">
+          <div class="image">
+               <img src="pics/بشنيخة.jpg">
+                 <div class="icons">
+                     <a href="#" class="fas fa-heart" ></a>
+                     <a href="#" class="cart"> add to cart</a>
+                   <a href="#" class="fas fa-share" ></a>
+               </div>
+           </div>
+       <div class="content">
+           <h3>Bechnikha 1kg</h3>
+           <div class="price">50.00 DH</div>
+       </div>
+   </div>
+   <div class="box">
+    <span class="discount">-20%</span>
+      <div class="image">
+           <img src="pics/Briwatt 🕊️🇲🇦.jpg">
+             <div class="icons">
+                 <a href="#" class="fas fa-heart" ></a>
+                 <a href="#" class="cart"> add to cart</a>
+               <a href="#" class="fas fa-share" ></a>
+           </div>
+       </div>
+   <div class="content">
+       <h3>Briwat 1kg</h3>
+       <div class="price">140.00 DH <span>170.00 DH</span></div>
+   </div>
+   </div>
+    </div>
+</section>
+<!--products section ends-->
+
+<!--review section starts-->
+<section class="review" id="review">
+<h1 class="heading">customer's <span>review</span></h1>
+<div class="box-container">
+        <div class="box">
+            <div class="starts">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis non, aut odit culpa consectetur eaque nam magni corrupti delectus sint temporibus maxime itaque aspernatur voluptatum repellendus nulla molestias quia saepe.></p>
+        <div class="user">
+            <img src="pics/customers/youssef.jpeg">
+            <div class="user-info">
+                <h3>Youssef El helali</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+        </div>
+        <div class="box">
+            <div class="starts">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis non, aut odit culpa consectetur eaque nam magni corrupti delectus sint temporibus maxime itaque aspernatur voluptatum repellendus nulla molestias quia saepe.></p>
+        <div class="user">
+            <img src="pics/customers/loubna.jpeg">
+            <div class="user-info">
+                <h3>Loubna Ben jaloune</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+        </div>
+        <div class="box">
+            <div class="starts">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+                <img src="pics/icons/star-fill.svg">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis non, aut odit culpa consectetur eaque nam magni corrupti delectus sint temporibus maxime itaque aspernatur voluptatum repellendus nulla molestias quia saepe.></p>
+        <div class="user">
+            <img src="pics/customers/hyung lee.jpeg">
+            <div class="user-info">
+                <h3>hyung Lee</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+        </div>
+ </div>
+</section>
+<!--review section ends-->
+
+<!--contact section starts-->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span> us</h1>
+    <div class="row">
+        <form action="">
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="number" placeholder="number" class="box">
+            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+        <div class="image">
+            <img src="pics/S_W_E_E_T___C_O_O_K_I_E_S_____________اللهم_بارك_-removebg-preview.png" alt="">
+        </div>
+    </div>
+</section>
+<!--contact section ends-->
+</body>
+</html> 

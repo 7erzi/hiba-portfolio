@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail Sigar</title>
+    <link rel="stylesheet" href="css/detail.briwa4.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+      <div class="navbar">
+    <div class="menu">
+        <img src="img/logo.png" alt="logo">
+         <button class="burger" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="nav.html">Acceuil</a></li>
+            <li><a href="a propos de nous .html">A propos de nous</a></li>
+           <li class="has-sous-nav">
+                <a href="catégorie.html">Catégories</a>
+             <ul class="sous-nav">
+                <li><a href="chebakia.html">Chebakia</a></li>
+                <li><a href="briwat.html">Briwat</a></li>
+                <li><a href="sigar.html">Sigar</a></li>
+                <li><a href="selou.html">Selou</a></li>
+                <li><a href="packs.html">Pack</a></li>
+             </ul>
+            </li>
+             <li><a href="produit.html">Nos Produits</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            
+        </ul>
+    </div> 
+    <a class="signup" href="inscription.html">S'inscrire</a>
+</div>
+
+   <div class="product-detail">
+  <div class="left" id="left-box">
+    <img src="img/sigarchoco2.jpg" alt="image">
+  </div>
+  <div class="right">
+    <h2>Sigar Au Chocolat</h2>
+    <p class="price">149.00 DH</p>
+    <p class="desc">  Un rouleau doré, délicatement trempé dans un bain de chocolat velouté. Chaque sigar est une promesse de douceur et de croquant, où le parfum intense du chocolat sublime chaque bouchée en un pur moment de délice.</p>
+    <div class="quantity">
+      <label>Quantité :</label>
+      <button onclick="decreaseQty()">-</button>
+      <span id="qty">1</span>
+      <button onclick="increaseQty()">+</button>
+    </div>
+
+    <button class="add-to-cart" id="add-to-cart">Ajouter au panier</button>
+  </div>
+</div>
+<div class="produitssim">
+<h2>Produits Similaire</h2>
+<div class="boxs">
+<div class="product-box">
+  <a href="detail.briwat1.html"><img src="img/briwa2.jpeg" alt="Chebakia" class="product-img" /></a>
+    <h2>Briwat Chocolat Brillé <br>Briwat 1kg</h2>
+    <h3 class="prix">200DH <span>/kg</span></h3>
+</div>
+<div class="product-box">
+ <a href="detail.chebakia6.html"> <img src="img/moroccan chebakia🇲🇦.jpeg" alt="Chebakia" class="product-img" /></a>
+    <h2>Chebakia Au Sésames<br>Chebakia 1kg</h2>
+    <h3 class="prix">120DH <span>/kg</span></h3>
+</div>
+<div class="product-box">
+  <a href="detail.selou10.html"><img src="img/seloutryf.jpeg" alt="Chebakia" class="product-img" /></a>
+    <h2>Selou Au Amlou <br>Selou 1kg</h2>
+    <h3 class="prix">189DH <span>/kg</span></h3>
+</div>
+<div class="product-box">
+  <a href="detail.sigar8.html"><img src="img/sigarchoco2.jpg" alt="Chebakia" class="product-img" /></a>
+    <h2>Sigar Au Chocolat <br>Sigar 1kg</h2>
+    <h3 class="prix">125DH <span>/kg</span></h3>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+        
+      <h3>Chebakia Healthy</h3>
+      <p>
+        Notre passion pour la pâtisserie marocaine artisanale nous pousse chaque jour à vous offrir les meilleures chebakia, préparées avec soin et des ingrédients 100% naturels.
+      </p>
+     
+    </div>
+
+    <div class="footer-section">
+      <h4>Office</h4>
+      <p>ITPL Road<br>
+        Rue Allal Ben Abdellah<br>
+        Casablanca, Maroc<br>
+        ChebakiaMarocaine@email.com<br>
+        +212 6 74 13 45 56
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Liens utiles</h4>
+         <ul>
+        <li><a href="payement.html">Payement & Taxs </a></li>
+        <li><a href="utilisation.html">Condition d'utilisation</a></li>
+        <li><a href="livraison.html">Condition de livraison</a></li>
+        <li><a href="retour.html">Condition de retour</a></li>
+      </ul>
+      <div class="icons">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-square-youtube"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <label for="email">Newsletter</label><br>
+    <input type="email" id="email" placeholder="Entrez votre email">
+    <button>Envoyer</button>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Chebakia Healthy. Tous droits réservés.
+  </div>
+</footer>
+
+
+    <script src="js/detail.briwa4.js"></script>
+</body>
+</html>

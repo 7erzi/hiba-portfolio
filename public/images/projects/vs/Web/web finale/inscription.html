@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="css/inscription.css">
+</head>
+<body>
+    <style>
+           * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(img/ck22.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        section {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            width: 420px;
+            height: 420px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width:380px;
+            padding: 20px 20px;
+            border-radius: 15px;
+            margin: 0;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            counter-reset: #fff;
+            padding-right: 40px;
+        }
+        .input-box remember{
+           width: 30%;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+         .input-box i{
+            position: relative;
+            right: -90%;
+            bottom: 29px;
+            transform: translatey(-50%);
+            color: #fff;
+            top: -40px;
+ }
+ .input-box2{
+    position: relative;
+    width: 100%;
+ }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 17px;
+            color: white;
+            margin: 2px 50px ;
+            margin-left: -90px;
+            position: relative;
+            bottom: 20px;
+
+
+            
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+           
+        }
+        label{
+            display:inline-block;
+        }
+
+        .remember-forgot a,
+        .registre-link a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+        
+        .registre-link a {
+            text-decoration: underline;
+        }
+  
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            outline: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transform: 0.5s;
+        }
+
+        .login-btn:hover {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0, 2);
+            color: #fff;
+
+        }
+
+        .registre-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            top: -10px;
+        }
+        .remember-me input{
+            width: 4%;
+        }
+    </style>
+    <div class="inscrire">
+        <section>
+            <h1>S'inscrire</h1>
+            <div class="input-box">
+                <input type="text" placeholder=" Entrer votre Email"
+                    style="font-size: 18px; position: relative; top: -10px; color: #fff;">
+                <i class="fa-solid fa-user"></i>
+                <div class="input-box2">
+                    <input type="password" placeholder="Créer un mot de passe"
+                        style="font-size: 18px; position: relative; bottom: 10px; color: #fff;">
+                    <i class="fa-solid fa-eye" style="position: relative; bottom: 25px;"></i>
+                </div>
+                <div class="remember-forgot"style="position: relative; top: -20px; left: 70px;">
+                    <div class="remember-me" style="position: relative; top: 10px; left: 40px;">
+                        <input type="checkbox" id="remember"> 
+                      <label href="#"> j'accepte tous <a> les coockies & condition </a></label>
+                    </div>
+
+                </div>
+                <a href="nav.html"><button class="login-btn" id="login-btn">Inscrire</button></a>
+                <div class="registre-link">
+                    <p>J'ai déjà un compte <a href="login.html" id="inscrire-link"> Connecter </a></p>
+                </div>
+        </section>
+    </div>
+    <script>
+          const loginbtn = document.getElementById('login-btn');
+     loginbtn.addEventListener('click' ,function(){
+      alert('Bienvenue chez notre magasin');
+     });
+    </script>
+</body>
+</html>

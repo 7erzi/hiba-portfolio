@@ -1,0 +1,96 @@
+[
+  {
+    "id": "3d-chamber1",
+    "title": "Chambre 3D — Scène 1",
+    "type": "3d",
+    "software": ["max"],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un espace intérieur sous 3ds Max.",
+    "imageFolder": "3d/chamber1 - room 1",
+    "link": "",
+    "featured": false,
+    "order": 10
+  },
+  {
+    "id": "3d-exterieur",
+    "title": "Extérieur architectural",
+    "type": "3d",
+    "software": ["max"],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Rendu extérieur d'un bâtiment, avec variante nocturne.",
+    "imageFolder": "3d/exterieur-outside",
+    "link": "",
+    "featured": false,
+    "order": 9
+  },
+  {
+    "id": "architectural-walkthrough",
+    "title": "Walkthrough architectural",
+    "type": "3d",
+    "software": ["max", "ae"],
+    "year": 2026,
+    "dimensions": "1920×1080 · rendu 3D",
+    "description": "Modélisation et rendu 3D d'un espace intérieur, animation de caméra et composition finale.",
+    "imageFolder": "3d/inside",
+    "link": "",
+    "featured": true,
+    "order": 8
+  },
+  {
+    "id": "3d-magasin",
+    "title": "Magasin 3D",
+    "type": "3d",
+    "software": ["max"],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un espace commercial.",
+    "imageFolder": "3d/magasin-store",
+    "link": "",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "3d-modeling",
+    "title": "Étude de modélisation",
+    "type": "3d",
+    "software": ["max"],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Étapes de modélisation 3D.",
+    "imageFolder": "3d/modeling",
+    "link": "",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "3d-room2",
+    "title": "Chambre 3D — Scène 2",
+    "type": "3d",
+    "software": ["max"],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un second espace intérieur.",
+    "imageFolder": "3d/room 2",
+    "link": "",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "logo-ck",
+    "title": "Identité visuelle — Logo CK",
+    "type": "branding",
+    "software": ["ai"],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Création de logo et identité visuelle.",
+    "images": [
+      "images/projects/logos/logo-ck-horizontale.png",
+      "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg"
+    ],
+    "link": "",
+    "featured": false,
+    "order": 4
+  }
+]
