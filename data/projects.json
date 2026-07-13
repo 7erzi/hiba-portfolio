@@ -1,5 +1,20 @@
 [
   {
+    "id": "photoshop-game-flyer",
+    "title": "Flyer — Game",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2026,
+    "dimensions": "A5",
+    "description": "Flyer promotionnel pour un événement gaming.",
+    "image": "images/projects/photoshop/game.jpeg",
+    "link": "",
+    "featured": false,
+    "order": 15
+  },
+  {
     "id": "3d-chamber1",
     "title": "Chambre 3D — Scène 1",
     "type": "3d",
