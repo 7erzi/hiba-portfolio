@@ -80,6 +80,7 @@ function projectMatches(project) {
 // A project can define either:
 //   "image": "path.jpg"                    -> single visual
 //   "images": ["a.jpg", "b.jpg", "c.jpg"]   -> carousel (used when >1)
+//   "video": "path.mp4"                     -> click-to-play video, no carousel
 function getProjectImages(p) {
   if (Array.isArray(p.images) && p.images.length) return p.images;
   if (p.image) return [p.image];
@@ -99,6 +100,28 @@ function renderGrid() {
     const toolDots = p.software.map(s =>
       `<span style="--dot-color:${SOFTWARE[s]?.color || 'var(--ink-faint)'}" title="${SOFTWARE[s]?.name || s}"></span>`
     ).join('');
+
+    // Video project: play-icon thumb, no carousel — clicking opens the video full-screen
+    if (p.video) {
+      return `
+        <article class="card" style="animation-delay:${Math.min(i * 45, 400)}ms">
+          <div class="card__thumb card__thumb-video" style="--thumb-color:${primaryColor}" data-video-src="${p.video}">
+            <div class="video-play-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </div>
+            <span class="card__thumb-tag">${TYPES[p.type] || p.type}</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">${p.title}</h3>
+            <p class="card__desc">${p.description || ''}</p>
+            <div class="card__footer">
+              <span>${p.dimensions || ''} · ${p.year || ''}</span>
+              <div class="card__tools">${toolDots}</div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
 
     const images = getProjectImages(p);
     const hasCarousel = images.length > 1;
@@ -141,28 +164,99 @@ function renderGrid() {
   }).join('');
 }
 
-// Delegated click handler for every carousel on the grid (arrows + dots)
+// ---------------------------------------------------------------------
+// Lightbox — click any project thumbnail (image or video) to see it
+// large, with a smooth pop-in. Images fade+scale in; videos autoplay.
+// ---------------------------------------------------------------------
+let lightboxEl = null;
+
+function ensureLightbox() {
+  if (lightboxEl) return lightboxEl;
+  lightboxEl = document.createElement('div');
+  lightboxEl.className = 'lightbox-overlay';
+  document.body.appendChild(lightboxEl);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+  return lightboxEl;
+}
+
+function bindLightboxDismiss(el) {
+  el.addEventListener('click', (e) => {
+    if (e.target === el || e.target.classList.contains('lightbox-close')) {
+      closeLightbox();
+    }
+  });
+}
+
+function openLightbox(src, alt) {
+  const el = ensureLightbox();
+  el.innerHTML = `
+    <button class="lightbox-close" aria-label="Fermer">&times;</button>
+    <img class="lightbox-img" src="${src}" alt="${alt || ''}">
+  `;
+  bindLightboxDismiss(el);
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => el.classList.add('is-open'));
+}
+
+function openVideoLightbox(src) {
+  const el = ensureLightbox();
+  el.innerHTML = `
+    <button class="lightbox-close" aria-label="Fermer">&times;</button>
+    <video class="lightbox-video" src="${src}" controls autoplay playsinline></video>
+  `;
+  bindLightboxDismiss(el);
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => el.classList.add('is-open'));
+}
+
+function closeLightbox() {
+  if (!lightboxEl) return;
+  const video = lightboxEl.querySelector('.lightbox-video');
+  if (video) video.pause();
+  lightboxEl.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+// Single delegated click handler for the whole grid: video thumbs,
+// carousel dots/arrows, and opening the lightbox on a plain image click.
 document.getElementById('project-grid')?.addEventListener('click', (e) => {
-  const dot = e.target.closest('.thumb-dot');
-  const arrow = e.target.closest('.thumb-arrow');
-  if (!dot && !arrow) return;
-
-  const thumb = e.target.closest('.card__thumb');
-  const track = thumb.querySelector('.card__thumb-track');
-  const slideCount = track.children.length;
-  let index = parseInt(track.dataset.index || '0', 10);
-
-  if (dot) {
-    index = parseInt(dot.dataset.index, 10);
-  } else if (arrow) {
-    index = arrow.dataset.dir === 'next'
-      ? (index + 1) % slideCount
-      : (index - 1 + slideCount) % slideCount;
+  const videoThumb = e.target.closest('.card__thumb-video');
+  if (videoThumb) {
+    openVideoLightbox(videoThumb.dataset.videoSrc);
+    return;
   }
 
-  track.dataset.index = index;
-  track.style.transform = `translateX(-${index * 100}%)`;
-  thumb.querySelectorAll('.thumb-dot').forEach((d, i) => d.classList.toggle('is-active', i === index));
+  const dot = e.target.closest('.thumb-dot');
+  const arrow = e.target.closest('.thumb-arrow');
+  const thumb = e.target.closest('.card__thumb');
+  if (!thumb) return;
+
+  const track = thumb.querySelector('.card__thumb-track');
+  if (!track) return;
+
+  if (dot || arrow) {
+    const slideCount = track.children.length;
+    let index = parseInt(track.dataset.index || '0', 10);
+
+    if (dot) {
+      index = parseInt(dot.dataset.index, 10);
+    } else {
+      index = arrow.dataset.dir === 'next'
+        ? (index + 1) % slideCount
+        : (index - 1 + slideCount) % slideCount;
+    }
+
+    track.dataset.index = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    thumb.querySelectorAll('.thumb-dot').forEach((d, i) => d.classList.toggle('is-active', i === index));
+    return;
+  }
+
+  const index = parseInt(track.dataset.index || '0', 10);
+  const activeImg = track.children[index]?.querySelector('img');
+  if (activeImg) openLightbox(activeImg.src, activeImg.alt);
 });
 
 function renderTools() {

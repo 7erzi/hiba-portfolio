@@ -10,7 +10,7 @@
     "imageFolder": "3d/chamber1 - room 1",
     "link": "",
     "featured": false,
-    "order": 10
+    "order": 14
   },
   {
     "id": "3d-exterieur",
@@ -23,7 +23,7 @@
     "imageFolder": "3d/exterieur-outside",
     "link": "",
     "featured": false,
-    "order": 9
+    "order": 13
   },
   {
     "id": "architectural-walkthrough",
@@ -36,7 +36,7 @@
     "imageFolder": "3d/inside",
     "link": "",
     "featured": true,
-    "order": 8
+    "order": 12
   },
   {
     "id": "3d-magasin",
@@ -49,7 +49,7 @@
     "imageFolder": "3d/magasin-store",
     "link": "",
     "featured": false,
-    "order": 7
+    "order": 11
   },
   {
     "id": "3d-modeling",
@@ -62,7 +62,7 @@
     "imageFolder": "3d/modeling",
     "link": "",
     "featured": false,
-    "order": 6
+    "order": 10
   },
   {
     "id": "3d-room2",
@@ -75,22 +75,110 @@
     "imageFolder": "3d/room 2",
     "link": "",
     "featured": false,
-    "order": 5
+    "order": 9
   },
   {
-    "id": "logo-ck",
-    "title": "Identité visuelle — Logo CK",
+    "id": "sgtm-brand-guidelines",
+    "title": "SGTM — Charte graphique",
+    "type": "print",
+    "software": ["id", "ai"],
+    "year": 2026,
+    "dimensions": "A4",
+    "description": "Guide de marque façon plan technique pour la Société Générale des Travaux du Maroc.",
+    "image": "images/projects/logos/sgt.png",
+    "link": "",
+    "featured": true,
+    "order": 8
+  },
+  {
+    "id": "logo-concept-1",
+    "title": "Identité visuelle — Concept 1",
     "type": "branding",
     "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
-    "description": "Création de logo et identité visuelle.",
-    "images": [
-      "images/projects/logos/logo-ck-horizontale.png",
-      "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg"
-    ],
+    "description": "Exploration de concept de logo.",
+    "image": "images/projects/logos/Artboard 1.png",
+    "link": "",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "logo-concept-2",
+    "title": "Identité visuelle — Concept 2",
+    "type": "branding",
+    "software": ["ai"],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Exploration de concept de logo.",
+    "image": "images/projects/logos/Artboard 2.png",
+    "link": "",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "logo-concept-2b",
+    "title": "Identité visuelle — Concept 2, variante",
+    "type": "branding",
+    "software": ["ai"],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Variante du concept de logo.",
+    "image": "images/projects/logos/Artboard 2_1.png",
+    "link": "",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "logo-ck-horizontal",
+    "title": "Identité visuelle — Logo CK (horizontal)",
+    "type": "branding",
+    "software": ["ai"],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Création de logo, version horizontale.",
+    "image": "images/projects/logos/logo-ck-horizontale.png",
     "link": "",
     "featured": false,
     "order": 4
+  },
+  {
+    "id": "logo-ck-photo",
+    "title": "Identité visuelle — Logo CK (mise en situation)",
+    "type": "branding",
+    "software": ["ai"],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Application du logo en contexte.",
+    "image": "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg",
+    "link": "",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "motion-chebakia",
+    "title": "Animation — Chebakia",
+    "type": "motion",
+    "software": ["ae"],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Animation motion design.",
+    "video": "images/projects/videos/animation%20CHEBAKIA.mp4",
+    "link": "",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "motion-video-1",
+    "title": "Animation — Projet vidéo",
+    "type": "motion",
+    "software": ["ae"],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Composition et animation vidéo.",
+    "video": "images/projects/videos/VIDEO-2025-11-26-20-38-20.mp4",
+    "link": "",
+    "featured": false,
+    "order": 1
   }
 ]
