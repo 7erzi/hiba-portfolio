@@ -12,7 +12,7 @@
     "image": "images/projects/photoshop/game.jpeg",
     "link": "",
     "featured": false,
-    "order": 15
+    "order": 20
   },
   {
     "id": "3d-chamber1",
@@ -284,5 +284,80 @@
     "link": "",
     "featured": false,
     "order": 1
+  },
+  {
+    "id": "photoshop-abribus",
+    "title": "Mockup — Abribus",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2025,
+    "dimensions": "Mockup",
+    "description": "Mockup d'abribus publicitaire pour la SGTM.",
+    "image": "images/projects/photoshop/abribus.jpg",
+    "link": "",
+    "featured": false,
+    "order": 19
+  },
+  {
+    "id": "photoshop-billboard-final",
+    "title": "Panneau — Billboard",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2025,
+    "dimensions": "4×3 m",
+    "description": "Design de panneau publicitaire pour la SGTM.",
+    "image": "images/projects/photoshop/billboard-final.jpg",
+    "link": "",
+    "featured": false,
+    "order": 18
+  },
+  {
+    "id": "photoshop-billboard2",
+    "title": "Panneau — Billboard 2",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2025,
+    "dimensions": "4×3 m",
+    "description": "Variante de panneau publicitaire pour la SGTM.",
+    "image": "images/projects/photoshop/billboard2.jpg",
+    "link": "",
+    "featured": false,
+    "order": 17
+  },
+  {
+    "id": "photoshop-portrait",
+    "title": "Portrait — Retouche",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2025,
+    "dimensions": "A4",
+    "description": "Retouche photo et composition portrait.",
+    "image": "images/projects/photoshop/portrait.jpg",
+    "link": "",
+    "featured": false,
+    "order": 16
+  },
+  {
+    "id": "photoshop-urban-billboard",
+    "title": "Panneau — Urban Billboard",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2025,
+    "dimensions": "6×4 m",
+    "description": "Panneau urbain publicitaire pour la SGTM.",
+    "image": "images/projects/photoshop/urban-billboard.jpg",
+    "link": "",
+    "featured": false,
+    "order": 15
   }
 ]
