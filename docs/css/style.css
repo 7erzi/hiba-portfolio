@@ -315,6 +315,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   display: flex;
   align-items: flex-end;
   padding: 16px;
+  cursor: zoom-in;
   background:
     linear-gradient(155deg, color-mix(in srgb, var(--thumb-color, var(--ink)) 85%, black) 0%, var(--thumb-color, var(--ink)) 100%);
 }
@@ -381,7 +382,9 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 .thumb-dot.is-active { background: #fff; }
 
 .card__thumb-tag {
-  position: relative;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
   z-index: 3;
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -445,16 +448,16 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   gap: 12px;
 }
 .tool-row__icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-s);
-  background: var(--surface);
+  background: #fff;
   border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 5px;
+  padding: 7px;
 }
 .tool-row__icon img {
   width: 100%;
@@ -508,12 +511,55 @@ footer {
   .footer-links { align-items: flex-start; }
 }
 
+/* ===================================================================
+   LOGO CARDS — neutral paper background + "contain" so nothing gets
+   cropped or zoomed, instead of the colored "cover" gradient
+=================================================================== */
+.card__thumb--logo {
+  background: linear-gradient(155deg, var(--paper-deep) 0%, var(--paper) 100%);
+}
+.card__thumb--logo .card__thumb-slide img {
+  object-fit: contain;
+  padding: 28px;
+  background: transparent;
+}
+.card__thumb--logo .card__thumb-tag {
+  background: rgba(21, 23, 27, 0.08);
+  color: var(--ink-soft);
+}
+
+/* ===================================================================
+   VIDEO CARDS — centered play button on radial dark gradient
+=================================================================== */
+.card__thumb-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: radial-gradient(circle at center,
+    color-mix(in srgb, var(--thumb-color, var(--ink)) 55%, black) 0%,
+    color-mix(in srgb, var(--thumb-color, var(--ink)) 85%, black) 100%);
+}
+.video-play-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.card__thumb-video:hover .video-play-icon {
+  transform: scale(1.08);
+  background: #fff;
+}
 
 /* ===================================================================
    LIGHTBOX — click a thumbnail to see it large, smooth scale+fade
 =================================================================== */
-.card__thumb { cursor: zoom-in; }
-
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -528,12 +574,10 @@ footer {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 40px;
 }
-
 .lightbox-overlay.is-open {
   opacity: 1;
   visibility: visible;
 }
-
 .lightbox-img,
 .lightbox-video {
   max-width: min(90vw, 1100px);
@@ -543,12 +587,10 @@ footer {
   transform: scale(0.9);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .lightbox-overlay.is-open .lightbox-img,
 .lightbox-overlay.is-open .lightbox-video {
   transform: scale(1);
 }
-
 .lightbox-close {
   position: absolute;
   top: 24px;
@@ -565,35 +607,9 @@ footer {
   transition: background 0.15s ease;
   z-index: 1;
 }
-
 .lightbox-close:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-
-.card__thumb-video {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.video-play-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.card__thumb-video:hover .video-play-icon {
-  transform: scale(1.08);
-  background: #fff;
-}
-
 @media (max-width: 640px) {
   .lightbox-overlay { padding: 16px; }
   .lightbox-close { top: 12px; right: 12px; }

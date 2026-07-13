@@ -139,7 +139,8 @@
     "image": "images/projects/logos/sgt.png",
     "link": "",
     "featured": true,
-    "order": 8
+    "order": 8,
+    "isLogo": true
   },
   {
     "id": "logo-concept-1",
@@ -154,7 +155,8 @@
     "image": "images/projects/logos/Artboard 1.png",
     "link": "",
     "featured": false,
-    "order": 7
+    "order": 7,
+    "isLogo": true
   },
   {
     "id": "logo-concept-2",
@@ -169,7 +171,8 @@
     "image": "images/projects/logos/Artboard 2.png",
     "link": "",
     "featured": false,
-    "order": 6
+    "order": 6,
+    "isLogo": true
   },
   {
     "id": "logo-concept-2b",
@@ -184,7 +187,8 @@
     "image": "images/projects/logos/Artboard 2_1.png",
     "link": "",
     "featured": false,
-    "order": 5
+    "order": 5,
+    "isLogo": true
   },
   {
     "id": "logo-ck-horizontal",
@@ -199,7 +203,8 @@
     "image": "images/projects/logos/logo-ck-horizontale.png",
     "link": "",
     "featured": false,
-    "order": 4
+    "order": 4,
+    "isLogo": true
   },
   {
     "id": "logo-ck-photo",

@@ -125,6 +125,7 @@ function renderGrid() {
 
     const images = getProjectImages(p);
     const hasCarousel = images.length > 1;
+    const logoClass = p.isLogo ? ' card__thumb--logo' : '';
 
     const slides = images.map(src => `
       <div class="card__thumb-slide">
@@ -145,7 +146,7 @@ function renderGrid() {
 
     return `
       <article class="card" style="animation-delay:${Math.min(i * 45, 400)}ms">
-        <div class="card__thumb" style="--thumb-color:${primaryColor}">
+        <div class="card__thumb${logoClass}" style="--thumb-color:${primaryColor}">
           ${images.length ? `<div class="card__thumb-track" data-index="0">${slides}</div>` : ''}
           ${arrows}
           ${dots}
