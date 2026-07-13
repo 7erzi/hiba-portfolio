@@ -12,7 +12,12 @@
     "imageFolder": "3d/chamber1 - room 1",
     "link": "",
     "featured": false,
-    "order": 14
+    "order": 14,
+    "images": [
+      "images/projects/3d/chamber1%20-%20room%201/finale%201%202.jpg",
+      "images/projects/3d/chamber1%20-%20room%201/FINALE%20FINALE%201.jpg",
+      "images/projects/3d/chamber1%20-%20room%201/FINALE%20FINALE%202.jpg"
+    ]
   },
   {
     "id": "3d-exterieur",
@@ -27,7 +32,13 @@
     "imageFolder": "3d/exterieur-outside",
     "link": "",
     "featured": false,
-    "order": 13
+    "order": 13,
+    "images": [
+      "images/projects/3d/exterieur-outside/1%20(1).jpg",
+      "images/projects/3d/exterieur-outside/2%20(1).jpg",
+      "images/projects/3d/exterieur-outside/4%20(1).jpg",
+      "images/projects/3d/exterieur-outside/night.jpg"
+    ]
   },
   {
     "id": "architectural-walkthrough",
@@ -43,7 +54,14 @@
     "imageFolder": "3d/inside",
     "link": "",
     "featured": true,
-    "order": 12
+    "order": 12,
+    "images": [
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_1.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_2.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_3.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_4.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21.jpg"
+    ]
   },
   {
     "id": "3d-magasin",
@@ -58,7 +76,14 @@
     "imageFolder": "3d/magasin-store",
     "link": "",
     "featured": false,
-    "order": 11
+    "order": 11,
+    "images": [
+      "images/projects/3d/magasin-store/1%20(2).jpg",
+      "images/projects/3d/magasin-store/2%20(2).jpg",
+      "images/projects/3d/magasin-store/3%20(1).jpg",
+      "images/projects/3d/magasin-store/4%20(2).jpg",
+      "images/projects/3d/magasin-store/5.jpg"
+    ]
   },
   {
     "id": "3d-modeling",
@@ -73,7 +98,11 @@
     "imageFolder": "3d/modeling",
     "link": "",
     "featured": false,
-    "order": 10
+    "order": 10,
+    "images": [
+      "images/projects/3d/modeling/PHOTO-2026-01-13-22-42-52%20(1).jpg",
+      "images/projects/3d/modeling/PHOTO-2026-01-13-22-42-52.jpg"
+    ]
   },
   {
     "id": "3d-room2",
@@ -88,7 +117,13 @@
     "imageFolder": "3d/room 2",
     "link": "",
     "featured": false,
-    "order": 9
+    "order": 9,
+    "images": [
+      "images/projects/3d/room%202/1.jpg",
+      "images/projects/3d/room%202/2.jpg",
+      "images/projects/3d/room%202/3.jpg",
+      "images/projects/3d/room%202/4.jpg"
+    ]
   },
   {
     "id": "sgtm-brand-guidelines",
@@ -184,7 +219,8 @@
     "image": "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg",
     "link": "",
     "featured": false,
-    "order": 3
+    "order": 3,
+    "isLogo": true
   },
   {
     "id": "motion-chebakia",
@@ -196,8 +232,24 @@
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Animation motion design.",
-    "thumbnail": "images/projects/videos/ch.jpg",
+    "thumbnail": "images/projects/videos/ch.png",
     "video": "images/projects/videos/animation%20CHEBAKIA.mp4",
+    "link": "",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "motion-hotel",
+    "title": "Animation — Hôtel",
+    "type": "motion",
+    "software": [
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Animation motion design.",
+    "thumbnail": "images/projects/videos/am.png",
+    "video": "images/projects/videos/amine.mp4",
     "link": "",
     "featured": false,
     "order": 2
@@ -217,21 +269,5 @@
     "link": "",
     "featured": false,
     "order": 1
-  },
-   {
-    "id": "motion-hotel",
-    "title": "Animation — Hôtel",
-    "type": "motion",
-    "software": [
-      "ae"
-    ],
-    "year": 2026,
-    "dimensions": "Vidéo",
-    "description": "Animation motion design.",
-    "thumbnail": "images/projects/videos/am.png",
-    "video": "images/projects/videos/amine.mp4",
-    "link": "",
-    "featured": false,
-    "order": 2
   }
 ]

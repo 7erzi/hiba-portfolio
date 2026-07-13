@@ -27,7 +27,6 @@ const TYPES = {
 
 const state = { projects: [], activeFilters: new Set() };
 
-// Embedded fallback data — works even when fetch fails (local file, CORS, etc.)
 const EMBEDDED_PROJECTS = [
   {
     "id": "3d-chamber1",
