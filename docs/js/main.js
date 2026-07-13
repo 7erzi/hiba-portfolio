@@ -27,13 +27,289 @@ const TYPES = {
 
 const state = { projects: [], activeFilters: new Set() };
 
+// Embedded fallback data — works even when fetch fails (local file, CORS, etc.)
+const EMBEDDED_PROJECTS = [
+  {
+    "id": "3d-chamber1",
+    "title": "Chambre 3D — Scène 1",
+    "type": "3d",
+    "software": [
+      "max"
+    ],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un espace intérieur sous 3ds Max.",
+    "imageFolder": "3d/chamber1 - room 1",
+    "link": "",
+    "featured": false,
+    "order": 14,
+    "images": [
+      "images/projects/3d/chamber1%20-%20room%201/finale%201%202.jpg",
+      "images/projects/3d/chamber1%20-%20room%201/FINALE%20FINALE%201.jpg",
+      "images/projects/3d/chamber1%20-%20room%201/FINALE%20FINALE%202.jpg"
+    ]
+  },
+  {
+    "id": "3d-exterieur",
+    "title": "Extérieur architectural",
+    "type": "3d",
+    "software": [
+      "max"
+    ],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Rendu extérieur d'un bâtiment, avec variante nocturne.",
+    "imageFolder": "3d/exterieur-outside",
+    "link": "",
+    "featured": false,
+    "order": 13,
+    "images": [
+      "images/projects/3d/exterieur-outside/1%20(1).jpg",
+      "images/projects/3d/exterieur-outside/2%20(1).jpg",
+      "images/projects/3d/exterieur-outside/4%20(1).jpg",
+      "images/projects/3d/exterieur-outside/night.jpg"
+    ]
+  },
+  {
+    "id": "architectural-walkthrough",
+    "title": "Walkthrough architectural",
+    "type": "3d",
+    "software": [
+      "max",
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "1920×1080 · rendu 3D",
+    "description": "Modélisation et rendu 3D d'un espace intérieur, animation de caméra et composition finale.",
+    "imageFolder": "3d/inside",
+    "link": "",
+    "featured": true,
+    "order": 12,
+    "images": [
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_1.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_2.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_3.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21_4.jpg",
+      "images/projects/3d/inside/PHOTO-2026-01-13-22-52-21.jpg"
+    ]
+  },
+  {
+    "id": "3d-magasin",
+    "title": "Magasin 3D",
+    "type": "3d",
+    "software": [
+      "max"
+    ],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un espace commercial.",
+    "imageFolder": "3d/magasin-store",
+    "link": "",
+    "featured": false,
+    "order": 11,
+    "images": [
+      "images/projects/3d/magasin-store/1%20(2).jpg",
+      "images/projects/3d/magasin-store/2%20(2).jpg",
+      "images/projects/3d/magasin-store/3%20(1).jpg",
+      "images/projects/3d/magasin-store/4%20(2).jpg",
+      "images/projects/3d/magasin-store/5.jpg"
+    ]
+  },
+  {
+    "id": "3d-modeling",
+    "title": "Étude de modélisation",
+    "type": "3d",
+    "software": [
+      "max"
+    ],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Étapes de modélisation 3D.",
+    "imageFolder": "3d/modeling",
+    "link": "",
+    "featured": false,
+    "order": 10,
+    "images": [
+      "images/projects/3d/modeling/PHOTO-2026-01-13-22-42-52%20(1).jpg",
+      "images/projects/3d/modeling/PHOTO-2026-01-13-22-42-52.jpg"
+    ]
+  },
+  {
+    "id": "3d-room2",
+    "title": "Chambre 3D — Scène 2",
+    "type": "3d",
+    "software": [
+      "max"
+    ],
+    "year": 2026,
+    "dimensions": "Rendu 3D",
+    "description": "Modélisation et rendu d'un second espace intérieur.",
+    "imageFolder": "3d/room 2",
+    "link": "",
+    "featured": false,
+    "order": 9,
+    "images": [
+      "images/projects/3d/room%202/1.jpg",
+      "images/projects/3d/room%202/2.jpg",
+      "images/projects/3d/room%202/3.jpg",
+      "images/projects/3d/room%202/4.jpg"
+    ]
+  },
+  {
+    "id": "sgtm-brand-guidelines",
+    "title": "Identité visuelle — SGTM",
+    "type": "print",
+    "software": [
+      "id",
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "A4",
+    "description": "Guide de marque façon plan technique pour la Société Générale des Travaux du Maroc.",
+    "image": "images/projects/logos/sgtm.png",
+    "link": "",
+    "featured": true,
+    "order": 8,
+    "isLogo": true
+  },
+  {
+    "id": "logo-concept-1",
+    "title": "Identité visuelle — Concept 1",
+    "type": "branding",
+    "software": [
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Exploration de concept de logo.",
+    "image": "images/projects/logos/Artboard 1.png",
+    "link": "",
+    "featured": false,
+    "order": 7,
+    "isLogo": true
+  },
+  {
+    "id": "logo-concept-2",
+    "title": "Identité visuelle — Concept 2",
+    "type": "branding",
+    "software": [
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Exploration de concept de logo.",
+    "image": "images/projects/logos/Artboard 2.png",
+    "link": "",
+    "featured": false,
+    "order": 6,
+    "isLogo": true
+  },
+  {
+    "id": "logo-concept-2b",
+    "title": "Identité visuelle — Concept 2, variante",
+    "type": "branding",
+    "software": [
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Variante du concept de logo.",
+    "image": "images/projects/logos/Artboard 2_1.png",
+    "link": "",
+    "featured": false,
+    "order": 5,
+    "isLogo": true
+  },
+  {
+    "id": "logo-ck-horizontal",
+    "title": "Identité visuelle — Logo CK (horizontal)",
+    "type": "branding",
+    "software": [
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Création de logo, version horizontale.",
+    "image": "images/projects/logos/logo-ck-horizontale.png",
+    "link": "",
+    "featured": false,
+    "order": 4,
+    "isLogo": true
+  },
+  {
+    "id": "logo-ck-photo",
+    "title": "Identité visuelle — Rafinity",
+    "type": "branding",
+    "software": [
+      "ai"
+    ],
+    "year": 2026,
+    "dimensions": "Vectoriel",
+    "description": "Application du logo en contexte.",
+    "image": "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg",
+    "link": "",
+    "featured": false,
+    "order": 3,
+    "isLogo": true
+  },
+  {
+    "id": "motion-chebakia",
+    "title": "Animation — Chebakia",
+    "type": "motion",
+    "software": [
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Animation motion design.",
+    "thumbnail": "images/projects/videos/ch.png",
+    "video": "images/projects/videos/animation%20CHEBAKIA.mp4",
+    "link": "",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "motion-hotel",
+    "title": "Animation — Hôtel",
+    "type": "motion",
+    "software": [
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Animation motion design.",
+    "thumbnail": "images/projects/videos/am.png",
+    "video": "images/projects/videos/amine.mp4",
+    "link": "",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "motion-video-1",
+    "title": "Animation — OUELMES",
+    "type": "motion",
+    "software": [
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Composition et animation vidéo.",
+    "thumbnail": "images/projects/videos/ou.png",
+    "video": "images/projects/videos/VIDEO-2025-11-26-20-38-20.mp4",
+    "link": "",
+    "featured": false,
+    "order": 1
+  }
+];
+
 async function loadProjects() {
   try {
     const res = await fetch('data/projects.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     state.projects = await res.json();
   } catch (err) {
-    console.error('Impossible de charger les projets :', err);
-    state.projects = [];
+    console.warn('Fetch failed, using embedded data:', err.message);
+    state.projects = EMBEDDED_PROJECTS;
   }
   renderFilters();
   renderGrid();
