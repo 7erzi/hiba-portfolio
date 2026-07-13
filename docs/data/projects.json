@@ -136,7 +136,7 @@
     "year": 2026,
     "dimensions": "A4",
     "description": "Guide de marque façon plan technique pour la Société Générale des Travaux du Maroc.",
-    "image": "images/projects/logos/sgt.png",
+    "image": "images/projects/logos/sgtm.png",
     "link": "",
     "featured": true,
     "order": 8,
@@ -231,14 +231,31 @@
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Animation motion design.",
+    "thumbnail": "images/projects/videos/ch.jpg",
     "video": "images/projects/videos/animation%20CHEBAKIA.mp4",
     "link": "",
     "featured": false,
     "order": 2
   },
   {
+    "id": "motion-hotel",
+    "title": "Animation — Hôtel",
+    "type": "motion",
+    "software": [
+      "ae"
+    ],
+    "year": 2026,
+    "dimensions": "Vidéo",
+    "description": "Animation motion design.",
+    "thumbnail": "images/projects/videos/am.jpg",
+    "video": "images/projects/videos/amine.mp4",
+    "link": "",
+    "featured": false,
+    "order": 2
+  },
+  {
     "id": "motion-video-1",
-    "title": "Animation — Projet vidéo",
+    "title": "Animation — OUELMES",
     "type": "motion",
     "software": [
       "ae"
@@ -246,6 +263,7 @@
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Composition et animation vidéo.",
+    "thumbnail": "images/projects/videos/chou.png",
     "video": "images/projects/videos/VIDEO-2025-11-26-20-38-20.mp4",
     "link": "",
     "featured": false,

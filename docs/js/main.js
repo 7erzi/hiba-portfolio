@@ -12,7 +12,7 @@ const SOFTWARE = {
   max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                            use: 'Modélisation, rendu 3D',        level: 80 },
   eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/eclipse/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',            use: 'Développement Java',            level: 55 },
   phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'img/tools/phpmyadmin.svg', use: 'Bases de données MySQL',        level: 70 },
-  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs_code_icon.png',     use: 'Sites web, scripts',             level: 80 },
+  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs.png',     use: 'Sites web, scripts',             level: 80 },
 };
 
 const TYPES = {
@@ -102,26 +102,48 @@ function renderGrid() {
     ).join('');
 
     // Video project: play-icon thumb, no carousel — clicking opens the video full-screen
-    if (p.video) {
-      return `
-        <article class="card" style="animation-delay:${Math.min(i * 45, 400)}ms">
-          <div class="card__thumb card__thumb-video" style="--thumb-color:${primaryColor}" data-video-src="${p.video}">
-            <div class="video-play-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+   if (p.video) {
+    return `
+    <article class="card" style="animation-delay:${Math.min(i * 45,400)}ms">
+
+        <div class="card__thumb card__thumb-video"
+             data-video-src="${p.video}">
+
+            <img
+                src="${p.thumbnail || ''}"
+                alt="${p.title}"
+                loading="lazy"
+            >
+
+            <div class="video-overlay"></div>
+
+            <div class="video-play-icon">
+                <svg viewBox="0 0 24 24" width="30" height="30">
+                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                </svg>
             </div>
-            <span class="card__thumb-tag">${TYPES[p.type] || p.type}</span>
-          </div>
-          <div class="card__body">
+
+            <span class="card__thumb-tag">
+                ${TYPES[p.type] || p.type}
+            </span>
+
+        </div>
+
+        <div class="card__body">
             <h3 class="card__title">${p.title}</h3>
             <p class="card__desc">${p.description || ''}</p>
+
             <div class="card__footer">
-              <span>${p.dimensions || ''} · ${p.year || ''}</span>
-              <div class="card__tools">${toolDots}</div>
+                <span>${p.dimensions} · ${p.year}</span>
+                <div class="card__tools">
+                    ${toolDots}
+                </div>
             </div>
-          </div>
-        </article>
-      `;
-    }
+        </div>
+
+    </article>
+    `;
+}
 
     const images = getProjectImages(p);
     const hasCarousel = images.length > 1;
