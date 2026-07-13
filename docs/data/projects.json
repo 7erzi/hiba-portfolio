@@ -1,5 +1,20 @@
 [
   {
+    "id": "photoshop-game-flyer",
+    "title": "Flyer — Game",
+    "type": "print",
+    "software": [
+      "ps"
+    ],
+    "year": 2026,
+    "dimensions": "A5",
+    "description": "Flyer promotionnel pour un événement gaming.",
+    "image": "images/projects/photoshop/game.jpeg",
+    "link": "",
+    "featured": false,
+    "order": 15
+  },
+  {
     "id": "3d-chamber1",
     "title": "Chambre 3D — Scène 1",
     "type": "3d",
@@ -219,7 +234,8 @@
     "image": "images/projects/logos/PHOTO-2026-06-19-17-41-33.jpg",
     "link": "",
     "featured": false,
-    "order": 3
+    "order": 3,
+    "isLogo": true
   },
   {
     "id": "motion-chebakia",
@@ -231,7 +247,7 @@
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Animation motion design.",
-    "thumbnail": "images/projects/videos/ch.jpg",
+    "thumbnail": "images/projects/videos/ch.png",
     "video": "images/projects/videos/animation%20CHEBAKIA.mp4",
     "link": "",
     "featured": false,
@@ -263,7 +279,7 @@
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Composition et animation vidéo.",
-    "thumbnail": "images/projects/videos/ch.png",
+    "thumbnail": "images/projects/videos/ou.png",
     "video": "images/projects/videos/VIDEO-2025-11-26-20-38-20.mp4",
     "link": "",
     "featured": false,
