@@ -470,63 +470,13 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 .tool-row__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .tool-row__name { font-size: 0.92rem; font-weight: 600; }
 .tool-row__use { font-size: 0.78rem; color: var(--ink-soft); }
-.tool-row__pct {
+.tool-row__pct { display: none; /*
   margin-left: auto;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--ink-faint);
   white-space: nowrap;
-}
-
-/* ===================================================================
-   SHOW MORE / SHOW LESS — matches existing button theme
-=================================================================== */
-.show-more-wrap {
-  display: flex;
-  justify-content: center;
-  padding: 20px var(--edge) 40px;
-}
-
-.show-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
-  padding: 12px 28px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.15s ease;
-}
-
-.show-more-btn:hover {
-  border-color: var(--ink-faint);
-  color: var(--ink);
-  transform: translateY(-1px);
-}
-
-.show-more-btn:active {
-  transform: translateY(0);
-}
-
-.show-more-btn .arrow {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.show-more-btn.is-open .arrow {
-  transform: rotate(180deg);
-}
-
-/* Hide cards beyond the first 4 when collapsed */
-.card.is-hidden {
-  display: none;
-}
-
+} */
 /* ===================================================================
    FOOTER
 =================================================================== */
