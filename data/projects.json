@@ -254,22 +254,6 @@
     "order": 2
   },
   {
-    "id": "motion-hotel",
-    "title": "Animation — Hôtel",
-    "type": "motion",
-    "software": [
-      "ae"
-    ],
-    "year": 2026,
-    "dimensions": "Vidéo",
-    "description": "Animation motion design.",
-    "thumbnail": "images/projects/videos/am.png",
-    "video": "images/projects/videos/amine.mp4",
-    "link": "",
-    "featured": false,
-    "order": 2
-  },
-  {
     "id": "motion-video-1",
     "title": "Animation — OUELMES",
     "type": "motion",

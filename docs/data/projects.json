@@ -60,10 +60,9 @@
     "title": "Walkthrough architectural",
     "type": "3d",
     "software": [
-      "max",
-      "ae"
+      "max"
     ],
-    "year": 2026,
+    "year": 2025,
     "dimensions": "1920×1080 · rendu 3D",
     "description": "Modélisation et rendu 3D d'un espace intérieur, animation de caméra et composition finale.",
     "imageFolder": "3d/inside",
@@ -253,22 +252,7 @@
     "featured": false,
     "order": 2
   },
-  {
-    "id": "motion-hotel",
-    "title": "Animation — Hôtel",
-    "type": "motion",
-    "software": [
-      "ae"
-    ],
-    "year": 2026,
-    "dimensions": "Vidéo",
-    "description": "Animation motion design.",
-    "thumbnail": "images/projects/videos/am.png",
-    "video": "images/projects/videos/amine.mp4",
-    "link": "",
-    "featured": false,
-    "order": 2
-  },
+
   {
     "id": "motion-video-1",
     "title": "Animation — OUELMES",
