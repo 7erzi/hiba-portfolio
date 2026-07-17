@@ -10,7 +10,7 @@ const SOFTWARE = {
   max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                           use: 'Modélisation, rendu 3D',        mono: '3ds' },
   eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/app/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',                use: 'Développement Java',            mono: 'Ec' },
   phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'images/projects/php.png',                                                                             use: 'Bases de données MySQL',        mono: 'Php' },
-  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs.png',                                                                              use: 'Sites web, scripts',             mono: 'VS' },
+  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs.png',                                                                              use: 'Sites web, scripts',             mono: 'VS' },
 };
 
 // ---------------------------------------------------------------------
