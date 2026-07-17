@@ -115,38 +115,39 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
    HERO — sky-gradient cover, illustrated scene, chunky stacked title
 =================================================================== */
 .hero {
-  padding: 40px var(--edge) 90px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(175deg, var(--sky-a) 0%, var(--sky-a) 35%, var(--sky-b) 100%);
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
   border-radius: 0 0 var(--radius-l) var(--radius-l);
 }
-.hero__blob {
+.hero__bg {
   position: absolute;
-  border-radius: 50%;
+  inset: 0;
   z-index: 0;
 }
-.hero__blob--1 {
-  width: 420px; height: 420px;
-  background: radial-gradient(circle at 30% 30%, #ffffff 0%, rgba(255,255,255,0) 70%);
-  top: -220px; right: -120px;
-  opacity: 0.8;
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
 }
-.hero__blob--2 {
-  width: 150px; height: 150px;
-  border: 2px dashed rgba(28, 42, 78, 0.35);
-  top: 300px; right: 90px;
-  border-radius: 50%;
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(105deg, var(--bg) 0%, rgba(239,244,252,0.92) 20%, rgba(239,244,252,0.42) 42%, rgba(239,244,252,0) 60%),
+    linear-gradient(to top, var(--bg) 0%, rgba(239,244,252,0) 16%);
 }
 .hero__inner {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-  align-items: end;
-  max-width: 1360px;
-  margin: 0 auto;
+  z-index: 2;
+  max-width: 640px;
+  padding: 110px var(--edge) 90px;
 }
 .eyebrow {
   font-family: var(--font-body);
@@ -200,26 +201,9 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 .btn-primary:hover { background: var(--pink); transform: translateY(-2px); }
 
-.hero__scene {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3.4;
-  border-radius: var(--radius-l);
-  overflow: hidden;
-  border: 4px solid var(--surface);
-  background: var(--surface-soft);
-  transform: rotate(1.6deg);
-  box-shadow: 0 30px 60px -24px rgba(28, 42, 78, 0.4);
-}
-.hero__scene img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  display: block;
-}
 .hero__sticker {
   position: absolute;
+  z-index: 3;
   font-family: var(--font-body);
   font-size: 0.76rem;
   font-weight: 700;
@@ -227,30 +211,36 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   border-radius: 999px;
   padding: 9px 18px;
   white-space: nowrap;
-  z-index: 2;
   box-shadow: 0 10px 20px -8px rgba(28, 42, 78, 0.35);
 }
 .hero__sticker--1 {
-  top: -16px;
-  left: -18px;
-  transform: rotate(-8deg);
+  top: 26px;
+  right: 28px;
+  transform: rotate(-6deg);
   background: var(--plum);
   color: #fff;
 }
 .hero__sticker--2 {
-  bottom: -16px;
-  right: -14px;
-  transform: rotate(6deg);
+  bottom: 30px;
+  right: 28px;
+  transform: rotate(4deg);
   color: var(--navy);
 }
 @media (max-width: 860px) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__scene { order: -1; margin-bottom: 30px; transform: rotate(-1deg); }
-  .hero__blob--1 { width: 260px; height: 260px; top: -130px; right: -110px; }
-  .hero__blob--2 { display: none; }
+  .hero { min-height: 620px; }
+  .hero__scrim {
+    background:
+      linear-gradient(180deg, var(--bg) 0%, rgba(239,244,252,0.9) 22%, rgba(239,244,252,0.55) 46%, rgba(239,244,252,0.15) 66%),
+      linear-gradient(to top, var(--bg) 0%, rgba(239,244,252,0) 18%);
+  }
+  .hero__inner { padding: 88px 20px 60px; }
 }
 @media (max-width: 640px) {
-  .hero { padding: 30px 18px 70px; }
+  .hero { min-height: 560px; border-radius: 0 0 var(--radius-m) var(--radius-m); }
+  .hero__inner { padding: 76px 18px 50px; }
+  .hero__sticker { font-size: 0.68rem; padding: 7px 13px; }
+  .hero__sticker--1 { top: 16px; right: 16px; }
+  .hero__sticker--2 { bottom: 18px; right: 16px; }
 }
 
 /* ===================================================================
