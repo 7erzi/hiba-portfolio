@@ -66,8 +66,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   outline-offset: 3px;
 }
 
-/* Rulers removed — the illustrated-cover look doesn't call for the
-   technical-drawing chrome; keep the elements in markup, just hide them. */
+/* Rulers removed */
 .ruler { display: none; }
 
 /* ===================================================================
@@ -81,8 +80,8 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   align-items: center;
   justify-content: space-between;
   padding: 20px var(--edge);
-  background: rgba(239, 244, 252, 0.82);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.295);
+  backdrop-filter: blur(80px);
 }
 .wordmark {
   font-family: var(--font-display);
@@ -112,7 +111,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   HERO — sky-gradient cover, illustrated scene, chunky stacked title
+   HERO
 =================================================================== */
 .hero {
   position: relative;
@@ -244,7 +243,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   PAGE STICKERS — peel-on illustration stickers between sections
+   PAGE STICKERS
 =================================================================== */
 .sticker-divider {
   position: relative;
@@ -254,19 +253,18 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 .page-sticker {
   position: absolute;
-  filter: drop-shadow(0 12px 20px rgba(28, 42, 78, 0.3));
   z-index: 5;
 }
 .page-sticker--a {
-  width: 96px;
+  width: 150px;
   top: -58px;
   left: 64px;
   transform: rotate(-11deg);
 }
 .page-sticker--b {
-  width: 88px;
-  top: -56px;
-  left: 50%;
+  width: 140px;
+  bottom : -1cm;
+  left: 80%;
   transform: translateX(-50%) rotate(6deg);
 }
 @media (max-width: 640px) {
@@ -275,7 +273,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   REGISTRATION MARK DIVIDER — kept as a quiet rhythm break
+   REGISTRATION MARK DIVIDER
 =================================================================== */
 .reg-divider {
   display: flex;
@@ -291,7 +289,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 .reg-divider i { flex: 1; height: 1px; background: var(--line); }
 
 /* ===================================================================
-   PANELS — the rounded "paper card" every section sits on
+   PANELS
 =================================================================== */
 .panel {
   background: var(--surface);
@@ -306,7 +304,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   INTRO — "Bonjour !" block, doodle arrow points from name to photo
+   INTRO — FIXED: avatar bigger, matches text height
 =================================================================== */
 .intro {
   padding: 56px 44px 12px;
@@ -314,16 +312,22 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   grid-template-columns: 0.85fr 1.5fr;
   gap: 44px;
   position: relative;
+  align-items: stretch;
 }
 .intro__avatar {
   width: 100%;
-  max-width: 220px;
-  filter: drop-shadow(0 16px 26px rgba(28, 42, 78, 0.28));
+  max-width: 320px;
+  display: flex;
+  align-items: flex-end;
 }
 .intro__avatar img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
   display: block;
+  position: relative;
+  left:130px;
 }
 .intro__title {
   font-size: clamp(2rem, 4vw, 2.7rem);
@@ -351,14 +355,20 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 @media (max-width: 760px) {
   .intro { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px 4px; }
-  .intro__avatar { max-width: 140px; }
+  .intro__avatar { max-width: 180px; }
 }
 
+/* ===================================================================
+   INFO GRID — FIXED: centered columns
+=================================================================== */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, minmax(200px, 280px));
+  gap: 60px;
   padding: 44px 44px 48px;
+  justify-content: center;
+  position: relative;
+  left:40px;
 }
 .info-col__label {
   font-family: var(--font-body);
@@ -411,7 +421,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   FILTERS — pastel pill chips
+   FILTERS
 =================================================================== */
 .filters {
   display: flex;
@@ -477,24 +487,8 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
 
 .card__index {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 4;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--pink);
-  color: #fff;
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 14px -4px rgba(255, 79, 160, 0.6);
+  display: none;
 }
-
 .card__thumb {
   aspect-ratio: 4 / 3;
   width: 100%;
@@ -589,7 +583,6 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   align-items: center;
   justify-content: space-between;
   padding-top: 12px;
-  border-top: 1px dashed var(--line);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.72rem;
@@ -597,7 +590,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 .card__tools { display: flex; gap: 5px; }
 .card__tools span {
-  width: 7px; height: 7px; border-radius: 50%;
+  width: 7px; height: 7px; 
   background: var(--dot-color, var(--ink-faint));
 }
 
@@ -617,7 +610,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   TOOLS — icon badge + colored skill bar, like the reference sheet
+   TOOLS
 =================================================================== */
 .tools-grid {
   display: grid;
@@ -720,13 +713,11 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 
 /* ===================================================================
-   FOOTER — dark navy bookend to ground the pastel palette
+   FOOTER
 =================================================================== */
 footer {
   background: var(--navy);
   color: #fff;
-  margin: 0 var(--edge);
-  border-radius: var(--radius-l);
   overflow: hidden;
 }
 @media (max-width: 640px) {

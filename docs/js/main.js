@@ -3,27 +3,34 @@
 // ---------------------------------------------------------------------
 const SOFTWARE = {
   ai:         { name: 'Illustrator',  color: 'var(--ai)',        icon: 'images/projects/logos/AI_Logo__Adobe_Illustrator____Design_Week___Logobutik-removebg-preview.png',    use: 'Identité visuelle, vectoriel', mono: 'Ai' },
-  ps:         { name: 'Photoshop',    color: 'var(--ps)',        icon: 'images/projects/photoshop/Lexique__PS_-removebg-preview.png',                                        use: 'Retouche, compositing',        mono: 'Ps' },
+  ps:         { name: 'Photoshop',    color: 'var(--ps)',        icon: 'images/projects/designs/Lexique__PS_-removebg-preview.png',                                       use: 'Retouche, compositing',        mono: 'Ps' },
   id:         { name: 'InDesign',     color: 'var(--id)',        icon: 'images/projects/ind/Adobe_InDesign_Logo-removebg-preview.png',                                       use: 'Mise en page, rapports, catalogues', mono: 'Id' },
-  ae:         { name: 'After Effects',color: 'var(--ae)',        icon: 'images/projects/videos/ae%20icon.png',                                                                use: 'Motion design, animation',     mono: 'Ae' },
-  au:         { name: 'Audition',     color: 'var(--au)',        icon: 'images/projects/videos/au%20icon.png',                                                                use: 'Habillage sonore, mixage',      mono: 'Au' },
-  max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                            use: 'Modélisation, rendu 3D',        mono: '3ds' },
-  eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/eclipse/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',            use: 'Développement Java',            mono: 'Ec' },
-  phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'images/projects/php.png', use: 'Bases de données MySQL',        mono: 'Php' },
-  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs.png',     use: 'Sites web, scripts',             mono: 'VS' },
+  ae:         { name: 'After Effects',color: 'var(--ae)',        icon: 'images/projects/animations/ae%20icon.png',                                                          use: 'Motion design, animation',     mono: 'Ae' },
+  au:         { name: 'Audition',     color: 'var(--au)',        icon: 'images/projects/animations/au%20icon.png',                                                          use: 'Habillage sonore, mixage',      mono: 'Au' },
+  max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                           use: 'Modélisation, rendu 3D',        mono: '3ds' },
+  eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/app/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',                use: 'Développement Java',            mono: 'Ec' },
+  phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'images/projects/php.png',                                                                             use: 'Bases de données MySQL',        mono: 'Php' },
+  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs.png',                                                                              use: 'Sites web, scripts',             mono: 'VS' },
+};
+
+// ---------------------------------------------------------------------
+// CATEGORY MAPPING — 4 exclusive filter chips
+// ---------------------------------------------------------------------
+const CATEGORIES = {
+  animations: { label: 'Animations', types: ['motion'], color: 'var(--ae)' },
+  '3d':       { label: '3D',         types: ['3d'],     color: 'var(--max)' },
+  logos:      { label: 'Logos',      types: ['branding'], color: 'var(--ai)' },
+  designs:    { label: 'Designs',    types: ['print'],  color: 'var(--ps)' },
 };
 
 const TYPES = {
-  branding: 'Identité',
-  print: 'Print',
-  web: 'Web',
+  branding: 'Logos',
+  print: 'Designs',
   '3d': '3D',
-  motion: 'Motion',
-  audio: 'Audio',
-  dev: 'Dev',
+  motion: 'Animations',
 };
 
-const state = { projects: [], activeFilters: new Set() };
+const state = { projects: [], activeFilter: null };
 
 // Embedded fallback data
 const EMBEDDED_PROJECTS = [
@@ -56,15 +63,18 @@ async function loadProjects() {
   renderTools();
 }
 
+// ---------------------------------------------------------------------
+// EXCLUSIVE CATEGORY FILTERS — only one active at a time
+// ---------------------------------------------------------------------
 function renderFilters() {
   const el = document.getElementById('filters');
-  const typesUsed = [...new Set(state.projects.map(p => p.type))];
-  const softwareUsed = [...new Set(state.projects.flatMap(p => p.software))];
 
-  const chips = [
-    ...typesUsed.map(t => ({ key: `type:${t}`, label: TYPES[t] || t, color: null })),
-    ...softwareUsed.map(s => ({ key: `sw:${s}`, label: SOFTWARE[s]?.name || s, color: SOFTWARE[s]?.color })),
-  ];
+  // Only category chips — no software chips
+  const chips = Object.entries(CATEGORIES).map(([key, cat]) => ({
+    key: `cat:${key}`,
+    label: cat.label,
+    color: cat.color,
+  }));
 
   el.innerHTML = chips.map(c => `
     <button class="chip" data-key="${c.key}" style="${c.color ? `--tag-color:${c.color}` : ''}">
@@ -75,21 +85,37 @@ function renderFilters() {
   el.querySelectorAll('.chip').forEach(btn => {
     btn.addEventListener('click', () => {
       const key = btn.dataset.key;
-      if (state.activeFilters.has(key)) state.activeFilters.delete(key);
-      else state.activeFilters.add(key);
-      btn.classList.toggle('is-active');
+
+      // EXCLUSIVE: only one filter active at a time
+      if (state.activeFilter === key) {
+        // Click same → deselect all
+        state.activeFilter = null;
+        btn.classList.remove('is-active');
+      } else {
+        // Click different → remove old, set new
+        state.activeFilter = key;
+        el.querySelectorAll('.chip').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+      }
+
       renderGrid();
     });
   });
 }
 
+// ---------------------------------------------------------------------
+// MATCH: single active filter only
+// ---------------------------------------------------------------------
 function projectMatches(project) {
-  if (state.activeFilters.size === 0) return true;
-  for (const key of state.activeFilters) {
-    const [kind, value] = key.split(':');
-    if (kind === 'type' && project.type !== value) return false;
-    if (kind === 'sw' && !project.software.includes(value)) return false;
+  if (!state.activeFilter) return true;
+
+  const [kind, value] = state.activeFilter.split(':');
+
+  if (kind === 'cat') {
+    const catTypes = CATEGORIES[value]?.types || [];
+    return catTypes.includes(project.type);
   }
+
   return true;
 }
 
@@ -185,14 +211,12 @@ function renderGrid() {
     const toolDots = p.software.map(s =>
       `<span style="--dot-color:${SOFTWARE[s]?.color || 'var(--ink-faint)'}" title="${SOFTWARE[s]?.name || s}"></span>`
     ).join('');
-    const badge = `<span class="card__index">${String(i + 1).padStart(2, '0')}</span>`;
 
     if (p.video) {
       const thumbSrc = p.thumbnail || '';
       const fallbackStyle = thumbSrc ? '' : 'style="display:none"';
       return `
       <article class="card" style="animation-delay:${Math.min(i * 45,400)}ms">
-        ${badge}
         <div class="card__thumb card__thumb-video" data-video-src="${p.video}">
           <img src="${thumbSrc}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'" ${fallbackStyle}>
           <div class="video-overlay"></div>
@@ -236,7 +260,6 @@ function renderGrid() {
 
     return `
       <article class="card" style="animation-delay:${Math.min(i * 45, 400)}ms">
-        ${badge}
         <div class="card__thumb${logoClass}" style="--thumb-color:${primaryColor}">
           ${images.length ? `<div class="card__thumb-track" data-index="0">${slides}</div>` : ''}
           ${arrows}
@@ -350,14 +373,17 @@ document.getElementById('project-grid')?.addEventListener('click', (e) => {
   if (activeImg) openLightbox(activeImg.src, activeImg.alt);
 });
 
+// -------------------------------------------------------------------
+// TOOLS — render with actual logo images
+// -------------------------------------------------------------------
 function renderTools() {
   const el = document.getElementById('tools-grid');
-  el.innerHTML = Object.values(SOFTWARE).map(t => `
-    <div class="tool-row">
+  el.innerHTML = Object.entries(SOFTWARE).map(([key, t]) => `
+    <div class="tool-row" data-tool="${key}">
       <span class="tool-row__icon" style="--tag-color:${t.color}">
-        <span class="tool-row__icon-mono">${t.mono}</span>
         <img src="${t.icon}" alt="${t.name}" loading="lazy"
-             onerror="this.style.display='none';">
+             onerror="this.parentElement.classList.add('has-fallback'); this.style.display='none';">
+        <span class="tool-row__icon-mono">${t.mono}</span>
       </span>
       <div class="tool-row__text">
         <span class="tool-row__name">${t.name}</span>
@@ -367,9 +393,9 @@ function renderTools() {
   `).join('');
 }
 
-
+// Reset button — clears the single active filter
 document.getElementById('reset-filters')?.addEventListener('click', () => {
-  state.activeFilters.clear();
+  state.activeFilter = null;
   document.querySelectorAll('.chip.is-active').forEach(c => c.classList.remove('is-active'));
   renderGrid();
 });
