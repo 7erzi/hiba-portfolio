@@ -3,9 +3,7 @@
     "id": "photoshop-game-flyer",
     "title": "Flyer — Game",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2026,
     "dimensions": "A5",
     "description": "Flyer promotionnel pour un événement gaming.",
@@ -18,9 +16,7 @@
     "id": "design-mockup-1",
     "title": "Mockup — Design 1",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -33,9 +29,7 @@
     "id": "design-mockup-2",
     "title": "Mockup — Design 2",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -48,9 +42,7 @@
     "id": "design-mockup-3",
     "title": "Mockup — Design 3",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -63,9 +55,7 @@
     "id": "3d-chamber1",
     "title": "Chambre 3D — Scène 1",
     "type": "3d",
-    "software": [
-      "max"
-    ],
+    "software": ["max"],
     "year": 2026,
     "dimensions": "Rendu 3D",
     "description": "Modélisation et rendu d'un espace intérieur sous 3ds Max.",
@@ -83,9 +73,7 @@
     "id": "3d-exterieur",
     "title": "Extérieur architectural",
     "type": "3d",
-    "software": [
-      "max"
-    ],
+    "software": ["max"],
     "year": 2026,
     "dimensions": "Rendu 3D",
     "description": "Rendu extérieur d'un bâtiment, avec variante nocturne.",
@@ -104,10 +92,7 @@
     "id": "architectural-walkthrough",
     "title": "Walkthrough architectural",
     "type": "3d",
-    "software": [
-      "max",
-      "ae"
-    ],
+    "software": ["max", "ae"],
     "year": 2026,
     "dimensions": "1920×1080 · rendu 3D",
     "description": "Modélisation et rendu 3D d'un espace intérieur, animation de caméra et composition finale.",
@@ -127,9 +112,7 @@
     "id": "3d-magasin",
     "title": "Magasin 3D",
     "type": "3d",
-    "software": [
-      "max"
-    ],
+    "software": ["max"],
     "year": 2026,
     "dimensions": "Rendu 3D",
     "description": "Modélisation et rendu d'un espace commercial.",
@@ -149,9 +132,7 @@
     "id": "3d-modeling",
     "title": "Étude de modélisation",
     "type": "3d",
-    "software": [
-      "max"
-    ],
+    "software": ["max"],
     "year": 2026,
     "dimensions": "Rendu 3D",
     "description": "Étapes de modélisation 3D.",
@@ -168,9 +149,7 @@
     "id": "3d-room2",
     "title": "Chambre 3D — Scène 2",
     "type": "3d",
-    "software": [
-      "max"
-    ],
+    "software": ["max"],
     "year": 2026,
     "dimensions": "Rendu 3D",
     "description": "Modélisation et rendu d'un second espace intérieur.",
@@ -189,10 +168,7 @@
     "id": "sgtm-brand-guidelines",
     "title": "Identité visuelle — SGTM",
     "type": "print",
-    "software": [
-      "id",
-      "ai"
-    ],
+    "software": ["id", "ai"],
     "year": 2026,
     "dimensions": "A4",
     "description": "Guide de marque façon plan technique pour la Société Générale des Travaux du Maroc.",
@@ -206,9 +182,7 @@
     "id": "logo-concept-1",
     "title": "Identité visuelle — Concept 1",
     "type": "branding",
-    "software": [
-      "ai"
-    ],
+    "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
     "description": "Exploration de concept de logo.",
@@ -222,9 +196,7 @@
     "id": "logo-concept-2",
     "title": "Identité visuelle — Concept 2",
     "type": "branding",
-    "software": [
-      "ai"
-    ],
+    "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
     "description": "Exploration de concept de logo.",
@@ -238,9 +210,7 @@
     "id": "logo-concept-2b",
     "title": "Identité visuelle — Concept 2, variante",
     "type": "branding",
-    "software": [
-      "ai"
-    ],
+    "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
     "description": "Variante du concept de logo.",
@@ -254,9 +224,7 @@
     "id": "logo-ck-horizontal",
     "title": "Identité visuelle — Logo CK (horizontal)",
     "type": "branding",
-    "software": [
-      "ai"
-    ],
+    "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
     "description": "Création de logo, version horizontale.",
@@ -270,9 +238,7 @@
     "id": "logo-ck-photo",
     "title": "Identité visuelle — Rafinity",
     "type": "branding",
-    "software": [
-      "ai"
-    ],
+    "software": ["ai"],
     "year": 2026,
     "dimensions": "Vectoriel",
     "description": "Application du logo en contexte.",
@@ -286,9 +252,7 @@
     "id": "motion-hotel",
     "title": "Animation — Hôtel",
     "type": "motion",
-    "software": [
-      "ae"
-    ],
+    "software": ["ae"],
     "year": 2026,
     "dimensions": "Vidéo",
     "description": "Animation motion design.",
@@ -302,9 +266,7 @@
     "id": "photoshop-abribus",
     "title": "Mockup — Abribus",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2025,
     "dimensions": "Mockup",
     "description": "Mockup d'abribus publicitaire pour la SGTM.",
@@ -317,9 +279,7 @@
     "id": "photoshop-billboard-final",
     "title": "Panneau — Billboard",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2025,
     "dimensions": "4×3 m",
     "description": "Design de panneau publicitaire pour la SGTM.",
@@ -332,9 +292,7 @@
     "id": "photoshop-billboard2",
     "title": "Panneau — Billboard 2",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2025,
     "dimensions": "4×3 m",
     "description": "Variante de panneau publicitaire pour la SGTM.",
@@ -347,9 +305,7 @@
     "id": "photoshop-portrait",
     "title": "Portrait — Retouche",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2025,
     "dimensions": "A4",
     "description": "Retouche photo et composition portrait.",
@@ -362,9 +318,7 @@
     "id": "photoshop-urban-billboard",
     "title": "Panneau — Urban Billboard",
     "type": "print",
-    "software": [
-      "ps"
-    ],
+    "software": ["ps"],
     "year": 2025,
     "dimensions": "6×4 m",
     "description": "Panneau urbain publicitaire pour la SGTM.",
@@ -377,9 +331,7 @@
     "id": "motion-chebakia",
     "title": "Animation — Chebakia",
     "type": "motion",
-    "software": [
-      "ae"
-    ],
+    "software": ["ae"],
     "year": 2025,
     "dimensions": "Vidéo",
     "description": "Animation motion design.",
@@ -393,9 +345,7 @@
     "id": "motion-video-1",
     "title": "Animation — OUELMES",
     "type": "motion",
-    "software": [
-      "ae"
-    ],
+    "software": ["ae"],
     "year": 2025,
     "dimensions": "Vidéo",
     "description": "Composition et animation vidéo.",
