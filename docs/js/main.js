@@ -2,15 +2,15 @@
 // Single source of truth for every tool
 // ---------------------------------------------------------------------
 const SOFTWARE = {
-  ai:         { name: 'Illustrator',  color: 'var(--ai)',        icon: 'images/projects/logos/AI_Logo__Adobe_Illustrator____Design_Week___Logobutik-removebg-preview.png',    use: 'Identité visuelle, vectoriel', level: 90 },
-  ps:         { name: 'Photoshop',    color: 'var(--ps)',        icon: 'images/projects/photoshop/Lexique__PS_-removebg-preview.png',                                        use: 'Retouche, compositing',        level: 50 },
-  id:         { name: 'InDesign',     color: 'var(--id)',        icon: 'images/projects/ind/Adobe_InDesign_Logo-removebg-preview.png',                                       use: 'Mise en page, rapports, catalogues', level: 85 },
-  ae:         { name: 'After Effects',color: 'var(--ae)',        icon: 'images/projects/videos/ae%20icon.png',                                                                use: 'Motion design, animation',     level: 70 },
-  au:         { name: 'Audition',     color: 'var(--au)',        icon: 'images/projects/videos/au%20icon.png',                                                                use: 'Habillage sonore, mixage',      level: 60 },
-  max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                            use: 'Modélisation, rendu 3D',        level: 80 },
-  eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/eclipse/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',            use: 'Développement Java',            level: 55 },
-  phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'images/projects/php.png', use: 'Bases de données MySQL',        level: 70 },
-  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs.png',     use: 'Sites web, scripts',             level: 80 },
+  ai:         { name: 'Illustrator',  color: 'var(--ai)',        icon: 'images/projects/logos/AI_Logo__Adobe_Illustrator____Design_Week___Logobutik-removebg-preview.png',    use: 'Identité visuelle, vectoriel', mono: 'Ai' },
+  ps:         { name: 'Photoshop',    color: 'var(--ps)',        icon: 'images/projects/photoshop/Lexique__PS_-removebg-preview.png',                                        use: 'Retouche, compositing',        mono: 'Ps' },
+  id:         { name: 'InDesign',     color: 'var(--id)',        icon: 'images/projects/ind/Adobe_InDesign_Logo-removebg-preview.png',                                       use: 'Mise en page, rapports, catalogues', mono: 'Id' },
+  ae:         { name: 'After Effects',color: 'var(--ae)',        icon: 'images/projects/videos/ae%20icon.png',                                                                use: 'Motion design, animation',     mono: 'Ae' },
+  au:         { name: 'Audition',     color: 'var(--au)',        icon: 'images/projects/videos/au%20icon.png',                                                                use: 'Habillage sonore, mixage',      mono: 'Au' },
+  max:        { name: '3ds Max',      color: 'var(--max)',       icon: 'images/projects/3d/3ds%20max%20icon.png',                                                            use: 'Modélisation, rendu 3D',        mono: '3ds' },
+  eclipse:    { name: 'Eclipse',      color: 'var(--eclipse)',   icon: 'images/projects/eclipse/Eclipse_Logo_PNG_Vector__SVG__Free_Download-removebg-preview.png',            use: 'Développement Java',            mono: 'Ec' },
+  phpmyadmin: { name: 'phpMyAdmin',   color: 'var(--phpmyadmin)',icon: 'images/projects/php.png', use: 'Bases de données MySQL',        mono: 'Php' },
+  vscode:     { name: 'VS Code',      color: 'var(--vscode)',    icon: 'images/projects/vs/vs.png',     use: 'Sites web, scripts',             mono: 'VS' },
 };
 
 const TYPES = {
@@ -355,18 +355,18 @@ function renderTools() {
   el.innerHTML = Object.values(SOFTWARE).map(t => `
     <div class="tool-row">
       <span class="tool-row__icon" style="--tag-color:${t.color}">
+        <span class="tool-row__icon-mono">${t.mono}</span>
         <img src="${t.icon}" alt="${t.name}" loading="lazy"
-             onerror="this.parentElement.classList.add('tool-row__icon--fallback'); this.remove();">
+             onerror="this.style.display='none';">
       </span>
       <div class="tool-row__text">
         <span class="tool-row__name">${t.name}</span>
         <span class="tool-row__use">${t.use}</span>
-        <span class="tool-row__meter"><span style="--tag-color:${t.color}; width:${t.level}%"></span></span>
       </div>
-      <span class="tool-row__pct">${t.level}%</span>
     </div>
   `).join('');
 }
+
 
 document.getElementById('reset-filters')?.addEventListener('click', () => {
   state.activeFilters.clear();

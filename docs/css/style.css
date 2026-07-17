@@ -254,29 +254,24 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 .page-sticker {
   position: absolute;
-  border-radius: 50%;
-  border: 5px solid var(--surface);
-  box-shadow: 0 12px 26px -6px rgba(28, 42, 78, 0.35);
-  object-fit: cover;
+  filter: drop-shadow(0 12px 20px rgba(28, 42, 78, 0.3));
   z-index: 5;
 }
 .page-sticker--a {
-  width: 92px;
-  height: 92px;
-  top: -46px;
+  width: 96px;
+  top: -58px;
   left: 64px;
   transform: rotate(-11deg);
 }
 .page-sticker--b {
-  width: 78px;
-  height: 78px;
-  top: -39px;
-  right: 90px;
-  transform: rotate(9deg);
+  width: 88px;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%) rotate(6deg);
 }
 @media (max-width: 640px) {
-  .page-sticker--a { width: 60px; height: 60px; top: -30px; left: 20px; }
-  .page-sticker--b { width: 54px; height: 54px; top: -27px; right: 20px; }
+  .page-sticker--a { width: 66px; top: -40px; left: 20px; }
+  .page-sticker--b { width: 62px; top: -38px; }
 }
 
 /* ===================================================================
@@ -322,19 +317,13 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
 }
 .intro__avatar {
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid var(--surface-soft);
-  background: var(--surface-soft);
   max-width: 220px;
-  box-shadow: 0 18px 34px -14px rgba(28, 42, 78, 0.35);
-  position: relative;
+  filter: drop-shadow(0 16px 26px rgba(28, 42, 78, 0.28));
 }
 .intro__avatar img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .intro__title {
   font-size: clamp(2rem, 4vw, 2.7rem);
@@ -369,7 +358,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 44px 44px 6px;
+  padding: 44px 44px 48px;
 }
 .info-col__label {
   font-family: var(--font-body);
@@ -409,32 +398,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   background: var(--blue);
 }
 @media (max-width: 760px) {
-  .info-grid { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px 6px; }
-}
-
-.contact-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 36px 44px 44px;
-}
-.contact-row a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.86rem;
-  text-decoration: none;
-  color: var(--navy);
-  background: var(--surface-soft);
-  border-radius: 999px;
-  padding: 10px 20px;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-}
-.contact-row a:hover { background: var(--navy); color: #fff; transform: translateY(-1px); }
-@media (max-width: 760px) {
-  .contact-row { padding: 24px 24px 32px; }
+  .info-grid { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px 40px; }
 }
 
 /* ===================================================================
@@ -676,46 +640,33 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01e
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: #fff;
+  background: var(--tag-color, var(--ink-faint));
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 8px;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0 6px 14px -6px rgba(28, 42, 78, 0.3);
 }
+.tool-row__icon-mono {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+}
 .tool-row__icon img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-.tool-row__icon--fallback {
-  background: var(--tag-color, var(--ink-faint));
+  padding: 7px;
+  background: #fff;
 }
 .tool-row__text { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
 .tool-row__name { font-size: 0.9rem; font-weight: 600; font-family: var(--font-display); color: var(--navy); }
 .tool-row__use { font-size: 0.76rem; color: var(--ink-soft); }
-.tool-row__meter {
-  margin-top: 3px;
-  height: 5px;
-  background: #E4EAF7;
-  border-radius: 999px;
-  overflow: hidden;
-}
-.tool-row__meter span {
-  display: block;
-  height: 100%;
-  background: var(--tag-color, var(--pink));
-  border-radius: 999px;
-}
-.tool-row__pct {
-  margin-left: auto;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.72rem;
-  color: var(--ink-faint);
-  white-space: nowrap;
-}
 
 /* ===================================================================
    SHOW MORE / SHOW LESS
