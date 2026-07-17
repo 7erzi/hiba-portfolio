@@ -3,7 +3,13 @@
     "id": "photoshop-game-flyer",
     "title": "Flyer — Game",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2026,
     "dimensions": "A5",
     "description": "Flyer promotionnel pour un événement gaming.",
@@ -16,7 +22,13 @@
     "id": "design-mockup-1",
     "title": "Mockup — Design 1",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -29,7 +41,13 @@
     "id": "design-mockup-2",
     "title": "Mockup — Design 2",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -42,7 +60,13 @@
     "id": "design-mockup-3",
     "title": "Mockup — Design 3",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2026,
     "dimensions": "A4",
     "description": "Design mockup pour portfolio.",
@@ -266,7 +290,13 @@
     "id": "photoshop-abribus",
     "title": "Mockup — Abribus",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2025,
     "dimensions": "Mockup",
     "description": "Mockup d'abribus publicitaire pour la SGTM.",
@@ -279,7 +309,13 @@
     "id": "photoshop-billboard-final",
     "title": "Panneau — Billboard",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2025,
     "dimensions": "4×3 m",
     "description": "Design de panneau publicitaire pour la SGTM.",
@@ -292,7 +328,13 @@
     "id": "photoshop-billboard2",
     "title": "Panneau — Billboard 2",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2025,
     "dimensions": "4×3 m",
     "description": "Variante de panneau publicitaire pour la SGTM.",
@@ -305,7 +347,13 @@
     "id": "photoshop-portrait",
     "title": "Portrait — Retouche",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2025,
     "dimensions": "A4",
     "description": "Retouche photo et composition portrait.",
@@ -318,7 +366,13 @@
     "id": "photoshop-urban-billboard",
     "title": "Panneau — Urban Billboard",
     "type": "print",
+<<<<<<< HEAD
     "software": ["ps"],
+=======
+    "software": [
+      "ps"
+    ],
+>>>>>>> 36a62077dd4338b43f8929fccd81b6c6aae6e517
     "year": 2025,
     "dimensions": "6×4 m",
     "description": "Panneau urbain publicitaire pour la SGTM.",
